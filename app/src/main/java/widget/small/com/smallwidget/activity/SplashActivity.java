@@ -60,7 +60,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 Logger.kosmos_d("-++->" + x);
-                Log.d("Kosmos", "-++->" + x);
+                Log.d("Kosmos", "-+-+->" + x);
                 new CountDownTimer(5000, 1000) {
                     @Override
                     public void onTick(long l) {
