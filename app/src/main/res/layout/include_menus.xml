@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/default_black"
+              android:orientation="vertical">
+    <!--首页-->
+    <RelativeLayout
+        android:id="@+id/nav_camera"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:background="@drawable/rect_side_nav_bar"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nav_camera_i"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_toLeftOf="@id/nav_camera_i"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu_theme"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/default_blue"/>
+    </RelativeLayout>
+    <!--支付宝-->
+    <RelativeLayout
+        android:id="@+id/nav_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nav_gallery_i"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="支付"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_toLeftOf="@id/nav_gallery_i"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu_theme"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/default_blue"/>
+    </RelativeLayout>
+    <!--视频-->
+    <RelativeLayout
+        android:id="@+id/nav_slideshow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/nav_slideshow_i"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="体重"
+            android:textColor="@color/white"/>
+
+        <ImageView
+
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_toLeftOf="@id/nav_slideshow_i"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu_theme"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/default_blue"/>
+    </RelativeLayout>
+    <!--设置-->
+    <RelativeLayout
+        android:id="@+id/nav_manage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/nav_manage_i"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="设置"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_toLeftOf="@id/nav_manage_i"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu_theme"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/default_blue"/>
+    </RelativeLayout>
+
+    <!--分享-->
+    <RelativeLayout
+        android:id="@+id/nav_send"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp40"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/nav_send_i"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="分享"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_toLeftOf="@id/nav_send_i"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu_theme"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/default_blue"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,133 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/rect">
+
+        <TextView
+            android:id="@+id/dia_simple_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="标题"
+            android:textColor="@color/default_blue"
+
+            />
+
+        <ImageView
+            android:id="@+id/dia_simple_line_1"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/dia_simple_title"
+            android:layout_marginTop="5dp"
+            android:background="@color/default_blue"
+            android:visibility="gone"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/dia_simple_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp45"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/dia_simple_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:maxLines="1"
+                android:text="取消"
+                android:textColor="@color/default_blue"
+                android:textSize="14sp"
+                />
+
+            <ImageView
+                android:id="@+id/dia_simple_line_v_3"
+                android:layout_width="1dp"
+                android:layout_height="@dimen/dp45"
+                android:background="@color/default_blue"
+                />
+
+            <Button
+                android:id="@+id/dia_simple_sure"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rect_regist_dialog"
+                android:maxLines="1"
+                android:text="下载"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/dia_simple_line_2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/dia_simple_ll"
+            android:background="@color/default_blue"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/dia_simple_ll"
+            android:layout_below="@id/dia_simple_line_1"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/dia_simple_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/iamge_java"
+                />
+
+            <TextView
+                android:id="@+id/dia_simple_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dia_simple_img"
+                android:layout_marginTop="@dimen/dp10"
+                android:gravity="center"
+                android:text="确定解散小组？\n小组解散将不可恢复！"
+                android:textColor="@color/default_gray"
+                android:textSize="12sp"
+
+                />
+
+            <EditText
+                android:id="@+id/dia_simple_edt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/dia_simple_img"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="@dimen/dp5"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:background="@drawable/rect_round_rim_blue"
+                android:hint="发现新版本"
+                android:inputType="text"
+                android:paddingBottom="@dimen/dp5"
+                android:paddingLeft="@dimen/dp10"
+                android:paddingTop="@dimen/dp5"
+                android:textColor="@color/default_black"
+                android:textColorHint="#999999"
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

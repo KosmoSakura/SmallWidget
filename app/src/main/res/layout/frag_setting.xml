@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_bg"
+    android:orientation="vertical"
+    >
+
+
+    <!--标题-->
+    <RelativeLayout
+        android:id="@+id/setting_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp30"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:text="设置"
+            android:textColor="@color/default_blue"
+            android:textSize="@dimen/sp16"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_heigh"
+            android:layout_alignParentBottom="true"
+            android:background="@color/default_blue"/>
+    </RelativeLayout>
+    <!--第一排-->
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_below="@id/setting_title"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp12"
+        android:paddingRight="@dimen/dp12"
+        android:weightSum="2">
+        <!--第一个***时光轴-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/setting_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingLeft="@dimen/dp12"
+            android:paddingRight="@dimen/dp12"
+            app:cardCornerRadius="@dimen/dp5"
+            app:cardPreventCornerOverlap="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp25"
+                    android:src="@android:drawable/ic_menu_crop"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="时光轴"
+                    android:textColor="@color/default_blue"/>
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+        <!--第二个-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/setting_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingLeft="@dimen/dp12"
+            android:paddingRight="@dimen/dp12"
+            app:cardCornerRadius="@dimen/dp5"
+            app:cardPreventCornerOverlap="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp25"
+                    android:src="@drawable/ic_menu_theme"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView1"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="主题"
+                    android:textColor="@color/default_blue"/>
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <!--第二排-->
+    <LinearLayout
+        android:id="@+id/ll_2"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_below="@id/ll_1"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp12"
+        android:paddingRight="@dimen/dp12"
+        android:weightSum="2">
+
+        <!--第三个-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/setting_card_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/dp5"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingLeft="@dimen/dp12"
+            android:paddingRight="@dimen/dp12"
+            app:cardCornerRadius="@dimen/dp5"
+            app:cardPreventCornerOverlap="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp25"
+                    android:src="@android:drawable/ic_menu_report_image"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView11"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="重置数据"
+                    android:textColor="@color/default_blue"/>
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+        <!--第四个-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/setting_card_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingLeft="@dimen/dp12"
+            android:paddingRight="@dimen/dp12"
+            app:cardCornerRadius="@dimen/dp5"
+            app:cardPreventCornerOverlap="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+                <ImageView
+                    android:id="@+id/imageView112"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp25"
+                    android:src="@android:drawable/ic_menu_add"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView112"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="还没想好"
+                    android:textColor="@color/default_blue"/>
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+</RelativeLayout>

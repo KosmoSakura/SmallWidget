@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="widget.small.com.smallwidget"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:name=".base.App"
+        android:allowBackup="true"
+        android:icon="@drawable/rinn_kakashi_s"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/StartAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.MainActivity">
+        </activity>
+        <!-- 声明widget对应的AppWidgetProvider -->
+        <!--
+        <receiver android:name=".WidgetProvider">
+            //Android系统定义的格式，不能更改，不能打错
+            <meta-data
+            android:name="android.appwidget.provider"
+            android:resource="@xml/appwidget_info"> //引用的在res/xml下创建的文件
+            </meta-data>
+
+        <intent-filter>
+            //这个是接收广播时的过滤器 Android定义的,不能修改
+            <action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+        </intent-filter>
+    </receiver>
+        -->
+        <receiver android:name=".service.WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.kosmos.widget.UPDATE_ALL"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_info"/>
+        </receiver>
+
+        <!-- <service android:name=".service.WidgetService"/> -->
+        <service android:name=".service.TimeService"/>
+
+        <activity android:name=".activity.ZhiFuActivity">
+        </activity>
+        <activity android:name=".activity.TimeActivity">
+        </activity>
+        <activity android:name=".activity.ThemeActivity">
+        </activity>
+    </application>
+
+</manifest>

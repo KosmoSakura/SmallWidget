@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/rect_blue_round_all_cirlce"
+              android:orientation="vertical"
+              android:padding="@dimen/dp5">
+
+    <TextView
+        android:id="@+id/pop_add_first_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="记录基本信息"
+        android:textColor="@color/default_black"
+        android:textSize="14sp"/>
+
+    <EditText
+        android:id="@+id/pop_add_first_name"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:hint="输入姓名（不可修改）"
+        android:paddingLeft="@dimen/dp5"
+        android:textColor="@color/default_black"
+        android:textSize="12sp"/>
+
+    <EditText
+        android:id="@+id/pop_add_first_value"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="@dimen/dp5"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:hint="输入体重（斤)"
+        android:inputType="numberDecimal"
+        android:paddingLeft="@dimen/dp5"
+        android:textColor="@color/default_black"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/pop_add_first_time"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="@dimen/dp5"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:hint="选择日期"
+        android:paddingLeft="@dimen/dp5"
+        android:textColor="@color/default_black"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/pop_add_first_ok"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/main_price"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rect_blue_round_all_cirlce"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/default_gray"
+        android:textSize="12sp"/>
+</LinearLayout>

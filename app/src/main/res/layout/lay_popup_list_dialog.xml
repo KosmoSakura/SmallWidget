@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/fl_popup"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+
+    <ListView
+        android:id="@+id/lv_choice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dp35"
+        android:layout_marginRight="@dimen/dp35"
+        android:layout_marginTop="@dimen/dp10"
+        android:background="@drawable/bg_white_round_solid_5"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="#cccccc"
+        android:dividerHeight="1px"
+        android:fadeScrollbars="false"
+        android:listSelector="@android:color/transparent"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:scrollbars="none">
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/title_t"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_above="@id/lv_choice"
+        android:layout_marginLeft="@dimen/dp35"
+        android:layout_marginRight="@dimen/dp35"
+        android:background="@drawable/bg_white_round_solid_5"
+        android:gravity="center"
+        android:lines="1"
+        android:maxLength="20"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:visibility="gone"
+        />
+</RelativeLayout>
