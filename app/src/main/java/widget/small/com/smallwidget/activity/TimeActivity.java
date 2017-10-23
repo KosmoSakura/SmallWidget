@@ -36,22 +36,22 @@ public class TimeActivity extends BaseActivity {
     protected void initData() {
         list = new ArrayList<>();
 
-        Event day1 = new Event(25, "今天和倩倩相恋", R.drawable.love_2);
+        Event day1 = new Event(25, "测试标题-->1", R.drawable.love_2);
         list.add(new Month(2016, 3, day1));
-        Event day2 = new Event(9, "第一次去酒吧", R.drawable.love_1);
+        Event day2 = new Event(9, "测试标题-->2", R.drawable.love_1);
         list.add(new Month(2016, 4, day2));
-        Event day3 = new Event(1, "今天我把倩倩带回了老家", R.drawable.love_3);
-        Event day4 = new Event(17, "倩倩生气一个人去了天台山", R.drawable.love);
+        Event day3 = new Event(1, "测试标题-->3", R.drawable.love_3);
+        Event day4 = new Event(17, "测试标题-->4", R.drawable.love);
         list.add(new Month(2016, 5, day3, day4));
-        Event day5 = new Event(10, "今天教师节，我和倩倩去找我的高中老师", R.drawable.love_4);
-        Event day52 = new Event(10, "倩倩给我过生日", R.drawable.love_5);
-        Event day51 = new Event(19, "我今天搬到了隔壁单元", R.drawable.love5);
+        Event day5 = new Event(10, "测试标题-->5", R.drawable.love_4);
+        Event day52 = new Event(10, "测试标题-->6", R.drawable.love_5);
+        Event day51 = new Event(19, "测试标题-->7", R.drawable.love5);
         list.add(new Month(2016, 9, day5, day52, day51));
-        Event day6 = new Event(29, "今天是倩倩的生日", R.drawable.love_6);
+        Event day6 = new Event(29, "测试标题-->8", R.drawable.love_6);
         list.add(new Month(2016, 10, day6));
-        Event day7 = new Event(29, "情人节快乐", R.drawable.love_7);
+        Event day7 = new Event(29, "测试标题-->9", R.drawable.love_7);
         list.add(new Month(2017, 10, day7));
-        Event day8 = new Event(25, "我们一周年啦~", R.drawable.love_8);
+        Event day8 = new Event(25, "测试标题-->10", R.drawable.love_8);
         list.add(new Month(2017, 3, day8));
         timeLineAdapter = new TimeLineAdapter(this, list);
         elv_Main.setAdapter(timeLineAdapter);
