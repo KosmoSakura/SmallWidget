@@ -201,7 +201,7 @@ public class WeightFrag extends BaseFragment implements View.OnClickListener, Po
             @Override
             public void onClick(View view, int pos) {
                 ivArc.setSelected(false);
-                rootView.setBackgroundColor(getResources().getColor(R.color.transparent));
+                rootView.setBackgroundColor(getResources().getColor(R.color.T_all));
                 rootView.setClickable(false);
                 switch (view.getId()) {
                     case R.id.wieght_id_add://添加
@@ -240,7 +240,7 @@ public class WeightFrag extends BaseFragment implements View.OnClickListener, Po
                     rootView.setBackgroundColor(getResources().getColor(R.color.default_background));
                     rootView.setClickable(true);
                 } else {
-                    rootView.setBackgroundColor(getResources().getColor(R.color.transparent));
+                    rootView.setBackgroundColor(getResources().getColor(R.color.T_all));
                     rootView.setClickable(false);
                 }
             }

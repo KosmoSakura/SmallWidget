@@ -154,7 +154,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             if (rel.getId() == select) {
                 rel.setBackgroundResource(R.drawable.rect_side_nav_bar);
             } else {
-                rel.setBackgroundResource(R.color.transparent);
+                rel.setBackgroundResource(R.color.T_all);
             }
 
         }

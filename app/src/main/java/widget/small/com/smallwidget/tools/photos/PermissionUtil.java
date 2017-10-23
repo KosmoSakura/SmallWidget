@@ -74,7 +74,7 @@ public class PermissionUtil {
         if (requestCode == PERMISSION_REQUEST_CODE) {
             for (int i = 0; i < grantResults.length; i++) {
                 if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
-                    ToastUtil.CustomShort("需要权限才能运行...");
+                    ToastUtil.ShortMessage("需要权限才能运行...");
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {

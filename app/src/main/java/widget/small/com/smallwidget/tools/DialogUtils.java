@@ -211,7 +211,7 @@ public class DialogUtils {
         dlg.setCancelable(false);
         dlg.show();
         dlg.setContentView(view);
-        dlg.getWindow().setBackgroundDrawableResource(R.color.transparent);
+        dlg.getWindow().setBackgroundDrawableResource(R.color.T_all);
         return dlg;
     }
 

@@ -32,7 +32,7 @@ public class BackGroundFrag extends BaseFragment {
 
     @Override
     protected void initData() {
-        GlideUtils.loadNormalPicNoPlace(context, R.drawable.background, background);
+        GlideUtils.loadLargePic(context, R.drawable.background, background);
     }
 
     @Override

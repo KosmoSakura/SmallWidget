@@ -87,7 +87,7 @@ public class WidgetProvider extends AppWidgetProvider {
     @Override
     public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
-        if (Code.Constants.ActionUpdateAll.equals(action)) {
+        if (Code.Broadcast.ActionUpdateAll.equals(action)) {
             // “更新”广播
             updateAllAppWidgets(context, AppWidgetManager.getInstance(context), idsSet, intent);
         } else if (intent.hasCategory(Intent.CATEGORY_ALTERNATIVE)) {

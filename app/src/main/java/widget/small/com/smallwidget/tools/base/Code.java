@@ -37,11 +37,27 @@ public interface Code {
         int jing = BASE - 1;
     }
 
-    interface Constants {
+    interface Broadcast {
         String ActionUpdateAll = "com.kosmos.widget.UPDATE_ALL"; // 更新widget的广播对应的action
         String ActionIntentService = "android.appwidget.kosmos.APP_WIDGET_SERVICE"; //启动WidgetService服务对应的action
-
     }
 
+    interface Constants {
+        String TerminalCode = "android_app";
+        String TerminalVersion = "1.0.1";//格式：1.0.0
+        String IMEID_MD5 = "";//TerminalSim
+        int clientVersion = 0;//客户端版本号
+        String phoneMODEL = "";//获取手机型号
+        String versionName = "";//获取手机版本号
+    }
+
+    class Config {
+        public static int activityCount = 0;
+        public static String BASE_PATH = null;
+        public static String CACHE_PATH = null;
+        public static String SAVE_SD_FLODER = null;//图像缓存SD卡路径的目录，主要用于缓存
+        public static String GLIDE_CACHE = null;
+        public static String IMAGE_DOWNLOAD = null;
+    }
 
 }

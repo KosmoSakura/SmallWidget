@@ -4,20 +4,13 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
-import android.os.Environment;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import greendao.dao.DaoMaster;
 import greendao.dao.DaoSession;
-import widget.small.com.smallwidget.constants.Constants;
 import widget.small.com.smallwidget.net.PersistentCookieStore;
 import widget.small.com.smallwidget.tools.logger.Logger;
-
-import static widget.small.com.smallwidget.constants.Constants.SAVE_SD_FLODER;
-import static widget.small.com.smallwidget.tools.IOUtils.checkFolderExists;
 
 /**
  * Description:
@@ -40,7 +33,6 @@ public class App extends Application {
         instance = this;
         Logger.init("Logger");
         cookiePrefs = getApplicationContext().getSharedPreferences(PersistentCookieStore.COOKIE_PREFS, 0);
-        initPathDatas();
         setDatabase();
     }
 
@@ -71,14 +63,7 @@ public class App extends Application {
         return db;
     }
 
-    private void initPathDatas() {
-        SAVE_SD_FLODER = Environment//图像缓存SD卡路径的目录，主要用于缓存
-            .getExternalStorageDirectory().getAbsolutePath()
-            + File.separator + "rato" + File.separator + "filecache" + File.separator;
-        checkFolderExists(SAVE_SD_FLODER);
 
-        Constants.phoneMODEL = Build.MODEL;//获取手机型号
-    }
 
     /**
      * 循环遍历 退出所有Act

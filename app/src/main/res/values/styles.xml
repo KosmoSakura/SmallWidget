@@ -18,7 +18,7 @@
     <style name="StartAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowBackground">@color/T_all</item>
         <item name="android:windowActionBar">false</item>
     </style>
     <!--全透明App-->

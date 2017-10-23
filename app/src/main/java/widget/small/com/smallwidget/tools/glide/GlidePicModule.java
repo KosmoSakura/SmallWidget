@@ -16,7 +16,7 @@ import com.squareup.okhttp.OkHttpClient;
 
 import java.io.InputStream;
 
-import widget.small.com.smallwidget.tools.base.Config;
+import widget.small.com.smallwidget.tools.base.Code;
 
 
 /**
@@ -35,7 +35,7 @@ public class GlidePicModule implements GlideModule {
         //设置格式
         builder.setDecodeFormat(DecodeFormat.PREFER_ARGB_8888);
         //自定义磁盘缓存：这种缓存存在SD卡上，所有的应用都可以访问到
-        builder.setDiskCache(new DiskLruCacheFactory(Config.GLIDE_CACHE, cacheSize));
+        builder.setDiskCache(new DiskLruCacheFactory(Code.Config.GLIDE_CACHE, cacheSize));
         //设置内存缓存大小
         //MemoryCache和BitmapPool的默认大小由MemorySizeCalculator类决定，MemorySizeCalculator会根据给定屏幕大小可用内存算出合适的缓存大小，这也是推荐的缓存大小
         // 目前根据这个推荐大小做出调整，推荐大小乘以1.2倍
