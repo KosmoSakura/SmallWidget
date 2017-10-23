@@ -9,7 +9,7 @@ import widget.small.com.smallwidget.tools.glide.GlideUtils;
 
 /**
  * Created by ZeroProject on 2016/5/25 17:00
- * 233
+ *
  */
 public class BackGroundFrag extends BaseFragment {
     private ImageView background;
