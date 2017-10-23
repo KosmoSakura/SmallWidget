@@ -215,7 +215,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         adapter = new MenuTabAdapter(this, publicMenuFragment,
             R.id.main_frag);
         GlideUtils.loadCirleAvatar(this, R.drawable.zero, head_icon);
-        GlideUtils.loadLargePic(this, R.drawable.zero, background);
+        GlideUtils.loadBlurPic(this, R.drawable.zero, background);
         GlideUtils.loadCirleAvatar(this, R.drawable.rinn_kakashi, iFtb);
         head_icon.setOnClickListener(new View.OnClickListener() {
             @Override
