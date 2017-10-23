@@ -16,7 +16,8 @@ import com.squareup.okhttp.OkHttpClient;
 
 import java.io.InputStream;
 
-import framework.constants.Config;
+import widget.small.com.smallwidget.tools.base.Config;
+
 
 /**
  * Description:自定义Glide的配置,这些配置将会在第一个Glide请求发起的时候被调用
