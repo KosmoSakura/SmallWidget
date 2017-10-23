@@ -84,7 +84,7 @@ public class SplashActivity extends BaseActivity {
         ObjectAnimator dismisAnimation = ObjectAnimator.ofFloat(splasher, "rotation", 0, 360);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.playTogether(outAnimation, showAnimation, dismisAnimation);
-        animatorSet.setDuration(5000);
+        animatorSet.setDuration(3000);
         animatorSet.start();
 
         animatorSet.addListener(new Animator.AnimatorListener() {

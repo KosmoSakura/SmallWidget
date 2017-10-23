@@ -18,29 +18,21 @@ import java.util.List;
 import widget.small.com.smallwidget.R;
 import widget.small.com.smallwidget.adapter.MenuTabAdapter;
 import widget.small.com.smallwidget.base.BaseActivity;
-import widget.small.com.smallwidget.tools.base.Code;
 import widget.small.com.smallwidget.fragment.BackGroundFrag;
-import widget.small.com.smallwidget.fragment.WeightFrag;
+import widget.small.com.smallwidget.fragment.CodeScanFragment;
 import widget.small.com.smallwidget.fragment.SettingFrag;
-import widget.small.com.smallwidget.fragment.ThemeFrag;
+import widget.small.com.smallwidget.fragment.WeightFrag;
 import widget.small.com.smallwidget.fragment.ZhiFuFrag;
 import widget.small.com.smallwidget.tools.ToastUtil;
+import widget.small.com.smallwidget.tools.base.Code;
 import widget.small.com.smallwidget.tools.glide.GlideUtils;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private DrawerLayout drawer;
 
     private ImageView iFtb, icon, head_icon, background;
-    private FrameLayout frag;
 
-    private Fragment fragment;
-    private BackGroundFrag frag0;
-    private ZhiFuFrag frag1;
-    private WeightFrag frag2;
-    private SettingFrag frag3;
-    private ThemeFrag frag4;
 
-    private RelativeLayout ral0, ral1, ral2, ral3, ral4;
     private MenuTabAdapter adapter;
     public List<Fragment> publicMenuFragment = new ArrayList<Fragment>();
     private int select;
@@ -62,23 +54,25 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         setStatusBarColor(this, Code.System.DefaultColor);
         drawer = findView(R.id.drawer_layout);
         iFtb = findView(R.id.main_ftb_iv);
-        frag = findView(R.id.main_frag);
+        FrameLayout frag = findView(R.id.main_frag);
 
         background = findView(R.id.main_head_back);
         head_icon = findView(R.id.main_head);
         icon = findView(R.id.main_iv_icon);
 
-        ral0 = findView(R.id.nav_camera);
-        ral1 = findView(R.id.nav_gallery);
-        ral2 = findView(R.id.nav_slideshow);
-        ral3 = findView(R.id.nav_manage);
-        ral4 = findView(R.id.nav_send);
+        RelativeLayout ral0 = findView(R.id.nav_camera);
+        RelativeLayout ral1 = findView(R.id.nav_gallery);
+        RelativeLayout ral2 = findView(R.id.nav_slideshow);
+        RelativeLayout ral3 = findView(R.id.nav_manage);
+        RelativeLayout ral4 = findView(R.id.nav_share);
+        RelativeLayout ral5 = findView(R.id.nav_send);
         menus = new ArrayList<>();
         menus.add(ral0);
         menus.add(ral1);
         menus.add(ral2);
         menus.add(ral3);
         menus.add(ral4);
+        menus.add(ral5);
     }
 
     @Override
@@ -109,6 +103,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        iFtb.setSelected(false);
         switch (v.getId()) {
             case R.id.main_ftb_iv://diandian:
                 drawer.openDrawer(GravityCompat.START);
@@ -127,24 +122,25 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 drawer.closeDrawer(GravityCompat.START);
                 gotoPage(2);
                 select = R.id.nav_slideshow;
+                iFtb.setSelected(true);
                 break;
             case R.id.nav_manage://设置
                 drawer.closeDrawer(GravityCompat.START);
                 gotoPage(3);
                 select = R.id.nav_manage;
                 break;
-            case R.id.nav_share://分享:
+            case R.id.nav_share://二维码
+                gotoPage(4);
                 select = R.id.nav_share;
+                iFtb.setSelected(true);
+                drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_send://发送
                 ToastUtil.CustomShort("这个还没写");
-                gotoPage(4);
                 select = R.id.nav_send;
                 break;
-            default:
-                break;
         }
-        iFtb.setSelected(v.getId() == R.id.nav_slideshow);
+
         if (iFtb.isSelected()) {
             iFtb.setVisibility(View.GONE);
         } else {
@@ -202,16 +198,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void initData() {
-        frag0 = new BackGroundFrag();
-        frag1 = new ZhiFuFrag();
-        frag2 = new WeightFrag();
-        frag3 = new SettingFrag();
-        frag4 = new ThemeFrag();
+        BackGroundFrag frag0 = new BackGroundFrag();
+        ZhiFuFrag frag1 = new ZhiFuFrag();
+        WeightFrag frag2 = new WeightFrag();
+        SettingFrag frag3 = new SettingFrag();
+//        ThemeFrag frag4 = new ThemeFrag();
+        CodeScanFragment scanFragment = new CodeScanFragment();
         checkFrag(frag0);
         checkFrag(frag1);
         checkFrag(frag2);
         checkFrag(frag3);
-        checkFrag(frag4);
+        checkFrag(scanFragment);
         adapter = new MenuTabAdapter(this, publicMenuFragment,
             R.id.main_frag);
         GlideUtils.loadCirleAvatar(this, R.drawable.zero, head_icon);
