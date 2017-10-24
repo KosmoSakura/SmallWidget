@@ -10,6 +10,7 @@ import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -70,44 +71,52 @@ public class SplashActivity extends BaseActivity {
         GlideUtils.loadSplashImage(R.drawable.zero_reds, splasher);
 
         startAnim();
-        splasher.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startAnim();
-            }
-        });
     }
 
     private void startAnim() {
-        ObjectAnimator outAnimation = ObjectAnimator.ofFloat(lay, "alpha", 0f, 1f, 0f);
-        ObjectAnimator showAnimation = ObjectAnimator.ofFloat(splasher, "alpha", 0f, 1.0f, 0.5f, 1.0f, 0.5f, 1.0f, 0.5f, 1.0f, 0.5f, 1.0f, 0.5f, 1.0f, 0.5f, 1.0f, 0.5f, 1.0f, 0.5f, 1.0f, 0.5f, 0f);
-        ObjectAnimator dismisAnimation = ObjectAnimator.ofFloat(splasher, "rotation", 0, 360);
-        AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.playTogether(outAnimation, showAnimation, dismisAnimation);
+        ObjectAnimator outAnimation = ObjectAnimator.ofFloat(lay, "alpha", 0f, 1f);
+        outAnimation.setDuration(1000);
+        outAnimation.start();
+        ObjectAnimator showAnimation = ObjectAnimator.ofFloat(splasher, "alpha", 0f, 1.0f);
+        ObjectAnimator rotationAnimation = ObjectAnimator.ofFloat(splasher, "rotation", 0, 360);
+        rotationAnimation.setInterpolator(new LinearInterpolator());//not stop
+        rotationAnimation.setRepeatCount(-1);//set repeat time forever
+        final AnimatorSet animatorSet = new AnimatorSet();
+//        animatorSet.play(outAnimation).before(showAnimation).with(rotationAnimation);
+        animatorSet.playTogether(showAnimation, rotationAnimation);
         animatorSet.setDuration(3000);
         animatorSet.start();
 
-        animatorSet.addListener(new Animator.AnimatorListener() {
+        splasher.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onAnimationStart(Animator animation) {
+            public void onClick(View v) {
+                ObjectAnimator outAnimation = ObjectAnimator.ofFloat(lay, "alpha", 1f, 0f);
+                outAnimation.setDuration(1000);
+                outAnimation.start();
+                outAnimation.addListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
 
-            }
+                    }
 
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                startActivity(new Intent(SplashActivity.this, MainActivity.class));
-            }
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    }
 
-            @Override
-            public void onAnimationCancel(Animator animation) {
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
 
-            }
+                    }
 
-            @Override
-            public void onAnimationRepeat(Animator animation) {
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {
 
+                    }
+                });
             }
         });
+
     }
 
     @Override
