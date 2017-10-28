@@ -1,5 +1,9 @@
 package widget.small.com.smallwidget.activity;
 
+import android.Manifest;
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Environment;
