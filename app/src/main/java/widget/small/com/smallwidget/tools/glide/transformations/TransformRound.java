@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.tools.glide.trans;
+package widget.small.com.smallwidget.tools.glide.transformations;
 
 import android.content.Context;
 import android.content.res.Resources;

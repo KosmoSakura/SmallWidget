@@ -17,10 +17,9 @@ import java.util.List;
 
 import greendao.bean.Themes;
 import widget.small.com.smallwidget.R;
-import widget.small.com.smallwidget.constants.Constants;
-import widget.small.com.smallwidget.tools.base.Code;
 import widget.small.com.smallwidget.db.DaoTheme;
 import widget.small.com.smallwidget.tools.SystemBarTintManager;
+import widget.small.com.smallwidget.tools.base.Code;
 
 
 
@@ -32,18 +31,14 @@ public abstract class BaseActivity extends AppCompatActivity {
 */
 
 
+
+    //里面做接收跳转信息初始化等操作
     protected void initIntent(Intent intent) {
         if (intent == null) {
             return;
         }
 
-    }//里面做接收跳转信息初始化等操作
-
-    protected void initReceiver() {
-
-
-    }//里面做接收广播等操作
-
+    }
     protected abstract int getLayoutResId();//所有子类必须实现，绑定Act视图
 
     protected abstract void initView();//所有子类必须实现，里面做页面初始化，找id，等操作
@@ -110,7 +105,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             return false;
         }
         for (ActivityManager.RunningAppProcessInfo processInfo : runningAppProcessInfoList) {
-            if (Constants.activityCount > 0 && processInfo.processName.equals(getPackageName()) &&
+            if (Code.Config.activityCount > 0 && processInfo.processName.equals(getPackageName()) &&
                 processInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
 //                ZeroI("栈包名：" + processInfo.processName + "---App包名：" + getPackageName() + "......." + processInfo.importance);
                 return true;
@@ -132,13 +127,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        Constants.activityCount++;
+        Code.Config.activityCount++;
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        Constants.activityCount--;
+        Code.Config.activityCount--;
     }
 
     @Override

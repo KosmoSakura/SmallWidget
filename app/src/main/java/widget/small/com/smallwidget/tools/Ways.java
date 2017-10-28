@@ -16,7 +16,7 @@ import widget.small.com.smallwidget.tools.base.Code;
 public class Ways {
 
     public static void sendBrad(String msg, Activity act) {
-        Intent updateIntent = new Intent(Code.Constants.ActionUpdateAll);
+        Intent updateIntent = new Intent(Code.Broadcast.ActionUpdateAll);
         updateIntent.putExtra("weight", msg);
         act.sendBroadcast(updateIntent);
     }

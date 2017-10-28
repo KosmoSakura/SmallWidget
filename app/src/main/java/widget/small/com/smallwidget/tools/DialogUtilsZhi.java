@@ -112,7 +112,7 @@ public class DialogUtilsZhi {
         dlg.setCancelable(true);
         dlg.show();
         dlg.setContentView(view);
-        dlg.getWindow().setBackgroundDrawableResource(R.color.transparent);
+        dlg.getWindow().setBackgroundDrawableResource(R.color.T_all);
         return dlg;
     }
 

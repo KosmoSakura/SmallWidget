@@ -17,9 +17,10 @@ import java.io.File;
 import widget.small.com.smallwidget.R;
 import widget.small.com.smallwidget.base.App;
 import widget.small.com.smallwidget.tools.TxtUtil;
-import widget.small.com.smallwidget.tools.glide.trans.TransformBlur;
-import widget.small.com.smallwidget.tools.glide.trans.TransformCircle;
-import widget.small.com.smallwidget.tools.glide.trans.TransformRound;
+import widget.small.com.smallwidget.tools.glide.transformations.TransformBlur;
+import widget.small.com.smallwidget.tools.glide.transformations.TransformCircle;
+import widget.small.com.smallwidget.tools.glide.transformations.TransformRound;
+
 
 /**
  * 使用Glide加载图片要注意以下几点：
@@ -28,11 +29,28 @@ import widget.small.com.smallwidget.tools.glide.trans.TransformRound;
  * 3、列表在滑动的时候，可以调用pauseRequests()取消请求，滑动停止时，调用resumeRequests()恢复请求
  */
 
-
+/**
+ * Description:Glide处理图片管理类
+ * <p>
+ * Author: yi.zhang
+ * Time: 2017/4/10 0010
+ * E-mail: yi.zhang@rato360.com
+ */
 public class GlideUtils {
 
     public final static int FILLET_10 = 10;//圆角角度 10度
 
+    public static void loadSplashImage(int resourceId, ImageView tartgetIv) {
+        Glide.with(App.getInstance())
+            .load(resourceId)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .placeholder(R.color.toast_black)
+            .error(R.drawable.zero_gray)
+            .centerCrop()
+            .crossFade()
+            .transform(new TransformCircle(App.getInstance()))
+            .into(tartgetIv);
+    }
     public static void loadToastImage(int resourceId, ImageView tartgetIv) {
         Glide.with(App.getInstance())
             .load(resourceId)
@@ -106,7 +124,6 @@ public class GlideUtils {
     }
 
     /**
-     * @param context
      * @param uri       图片来源为Uri
      * @param tartgetIv 目标控件
      */
@@ -167,7 +184,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(string)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -178,7 +195,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(string)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -188,12 +205,12 @@ public class GlideUtils {
         }
 
         //来源于Integer
-        if (resourceId != 0 && TxtUtil.isEmpty(string) && file == null && uri == null && model == null) {
+        else if (resourceId != 0 && TxtUtil.isEmpty(string) && file == null && uri == null && model == null) {
             if (w != 0 && h != 0) {
                 Glide.with(context)
                     .load(resourceId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -204,7 +221,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(resourceId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -214,12 +231,12 @@ public class GlideUtils {
         }
 
         //来源于File
-        if (file != null && TxtUtil.isEmpty(string) && resourceId == 0 && uri == null && model == null) {
+        else if (file != null && TxtUtil.isEmpty(string) && resourceId == 0 && uri == null && model == null) {
             if (w != 0 && h != 0) {
                 Glide.with(context)
                     .load(file)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -230,7 +247,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(file)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -240,12 +257,12 @@ public class GlideUtils {
         }
 
         //来源于Uri
-        if (uri != null && TxtUtil.isEmpty(string) && resourceId == 0 && file == null && model == null) {
+        else if (uri != null && TxtUtil.isEmpty(string) && resourceId == 0 && file == null && model == null) {
             if (w != 0 && h != 0) {
                 Glide.with(context)
                     .load(uri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -256,7 +273,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(uri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -266,12 +283,12 @@ public class GlideUtils {
         }
 
         //来源于byte[]
-        if (model != null && TxtUtil.isEmpty(string) && resourceId == 0 && file == null && uri == null) {
+        else if (model != null && TxtUtil.isEmpty(string) && resourceId == 0 && file == null && uri == null) {
             if (w != 0 && h != 0) {
                 Glide.with(context)
                     .load(model)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -282,7 +299,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(model)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -569,7 +586,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(string)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -580,7 +597,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(string)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -595,7 +612,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(resourceId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -606,7 +623,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(resourceId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -621,7 +638,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(file)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -632,7 +649,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(file)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -647,8 +664,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(uri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
+                    .placeholder(R.color.default_gray_light)
+                    .error(R.drawable.zero_gray)
                     .centerCrop()
                     .crossFade()
                     .override(w, h)
@@ -658,7 +675,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(uri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -673,7 +690,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(model)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -684,7 +701,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(model)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -802,15 +819,11 @@ public class GlideUtils {
      * 加载banner图
      * 以下1-5个来源中，每次只能有一个有值
      *
-     * @param context
      * @param string     来源 1
      * @param resourceId 来源 2
      * @param file       来源 3
      * @param uri        来源 4
      * @param model      来源 5
-     * @param targetIv
-     * @param w
-     * @param h
      */
     private static void loadBannerPic(Context context, String string, Integer resourceId, File file, Uri uri, byte[] model, ImageView targetIv, int w, int h) {
 
@@ -820,7 +833,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(string)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -831,7 +844,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(string)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -846,7 +859,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(resourceId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -857,7 +870,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(resourceId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -872,7 +885,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(file)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -883,7 +896,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(file)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -898,7 +911,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(uri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -909,7 +922,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(uri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -924,7 +937,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(model)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -935,7 +948,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(model)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
+                    .placeholder(R.color.default_gray_light)
                     .error(R.drawable.image_error)
                     .centerCrop()
                     .crossFade()
@@ -1071,9 +1084,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(string)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
-                    .centerCrop()
+                    .error(R.drawable.zero_gray)
                     .crossFade()
                     .override(w, h)
                     .thumbnail(0.5f)
@@ -1082,9 +1093,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(string)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
-                    .centerCrop()
+                    .error(R.drawable.zero_gray)
                     .crossFade()
                     .thumbnail(0.5f)
                     .into(targetIv);
@@ -1097,9 +1106,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(resourceId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
-//                    .centerCrop()
+                    .error(R.drawable.zero_gray)
                     .crossFade()
                     .override(w, h)
                     .thumbnail(0.5f)
@@ -1108,9 +1115,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(resourceId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
-//                    .centerCrop()
+                    .error(R.drawable.zero_gray)
                     .crossFade()
                     .thumbnail(0.5f)
                     .into(targetIv);
@@ -1123,9 +1128,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(file)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
-                    .centerCrop()
+                    .error(R.drawable.zero_gray)
                     .crossFade()
                     .override(w, h)
                     .thumbnail(0.5f)
@@ -1134,9 +1137,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(file)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
-                    .centerCrop()
+                    .error(R.drawable.zero_gray)
                     .thumbnail(0.5f)
                     .crossFade()
                     .into(targetIv);
@@ -1149,9 +1150,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(uri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
-                    .centerCrop()
+                    .error(R.drawable.zero_gray)
                     .crossFade()
                     .thumbnail(0.5f)
                     .override(w, h)
@@ -1160,9 +1159,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(uri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
-                    .centerCrop()
+                    .error(R.drawable.zero_gray)
                     .thumbnail(0.5f)
                     .crossFade()
                     .into(targetIv);
@@ -1175,9 +1172,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(model)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
-                    .centerCrop()
+                    .error(R.drawable.zero_gray)
                     .thumbnail(0.5f)
                     .crossFade()
                     .override(w, h)
@@ -1186,9 +1181,7 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(model)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.zero_gray)
-                    .error(R.drawable.image_error)
-                    .centerCrop()
+                    .error(R.drawable.zero_gray)
                     .thumbnail(0.5f)
                     .crossFade()
                     .into(targetIv);
@@ -1206,15 +1199,15 @@ public class GlideUtils {
      * @param tartgetIv 目标控件
      */
     public static void loadNormalPic(Context context, String string, ImageView tartgetIv) {
-        loadNormalPic(context, string, 0, null, null, null, tartgetIv, 0, 0);
+        loadNormalPic(context, string, 0, null, null, null, tartgetIv, 0, 0, R.drawable.zero_gray, R.color.deafult_tab_gray);
     }
 
     public static void loadNormalPic(Context context, String string, int error, ImageView tartgetIv) {
-        loadNormalPic(context, string, 0, null, null, null, tartgetIv, error, R.color.T_all);
+        loadNormalPic(context, string, 0, null, null, null, tartgetIv, 0, 0, error, R.color.T_all);
     }
 
     public static void loadNormalPic(Context context, String string, int error, int place, ImageView tartgetIv) {
-        loadNormalPic(context, string, 0, null, null, null, tartgetIv, error, place);
+        loadNormalPic(context, string, 0, null, null, null, tartgetIv, 0, 0, error, place);
     }
 
     /**
@@ -1225,7 +1218,7 @@ public class GlideUtils {
      * @param h         高
      */
     public static void loadNormalPic(Context context, String string, ImageView tartgetIv, int w, int h) {
-        loadNormalPic(context, string, 0, null, null, null, tartgetIv, w, h);
+        loadNormalPic(context, string, 0, null, null, null, tartgetIv, w, h, R.drawable.zero_gray, R.color.default_bg);
     }
 
     /**
@@ -1234,7 +1227,7 @@ public class GlideUtils {
      * @param tartgetIv  目标控件
      */
     public static void loadNormalPic(Context context, Integer resourceId, ImageView tartgetIv) {
-        loadNormalPic(context, "", resourceId, null, null, null, tartgetIv, 0, 0);
+        loadNormalPic(context, "", resourceId, null, null, null, tartgetIv, 0, 0, R.drawable.zero_gray, R.color.default_bg);
     }
 
     /**
@@ -1245,7 +1238,7 @@ public class GlideUtils {
      * @param h          高
      */
     public static void loadNormalPic(Context context, Integer resourceId, ImageView tartgetIv, int w, int h) {
-        loadNormalPic(context, "", resourceId, null, null, null, tartgetIv, w, h);
+        loadNormalPic(context, "", resourceId, null, null, null, tartgetIv, w, h, R.drawable.zero_gray, R.color.default_bg);
     }
 
     /**
@@ -1254,7 +1247,7 @@ public class GlideUtils {
      * @param tartgetIv 目标控件
      */
     public static void loadNormalPic(Context context, File file, ImageView tartgetIv) {
-        loadNormalPic(context, "", 0, file, null, null, tartgetIv, 0, 0);
+        loadNormalPic(context, "", 0, file, null, null, tartgetIv, 0, 0, R.drawable.zero_gray, R.color.default_bg);
     }
 
     /**
@@ -1265,7 +1258,7 @@ public class GlideUtils {
      * @param h         高
      */
     public static void loadNormalPic(Context context, File file, ImageView tartgetIv, int w, int h) {
-        loadNormalPic(context, "", 0, file, null, null, tartgetIv, w, h);
+        loadNormalPic(context, "", 0, file, null, null, tartgetIv, w, h, R.drawable.zero_gray, R.color.default_bg);
     }
 
     /**
@@ -1274,7 +1267,7 @@ public class GlideUtils {
      * @param tartgetIv 目标控件
      */
     public static void loadNormalPic(Context context, Uri uri, ImageView tartgetIv) {
-        loadNormalPic(context, "", 0, null, uri, null, tartgetIv, 0, 0);
+        loadNormalPic(context, "", 0, null, uri, null, tartgetIv, 0, 0, R.drawable.zero_gray, R.color.default_bg);
     }
 
     /**
@@ -1285,7 +1278,7 @@ public class GlideUtils {
      * @param h         高
      */
     public static void loadNormalPic(Context context, Uri uri, ImageView tartgetIv, int w, int h) {
-        loadNormalPic(context, "", 0, null, uri, null, tartgetIv, w, h);
+        loadNormalPic(context, "", 0, null, uri, null, tartgetIv, w, h, R.drawable.zero_gray, R.color.default_bg);
     }
 
     /**
@@ -1294,8 +1287,9 @@ public class GlideUtils {
      * @param tartgetIv 目标控件
      */
     public static void loadNormalPic(Context context, byte[] model, ImageView tartgetIv) {
-        loadNormalPic(context, "", 0, null, null, model, tartgetIv, 0, 0);
+        loadNormalPic(context, "", 0, null, null, model, tartgetIv, 0, 0, R.drawable.zero_gray, R.color.default_bg);
     }
+
 
     /**
      * @param context
@@ -1305,7 +1299,7 @@ public class GlideUtils {
      * @param h         高
      */
     public static void loadNormalPic(Context context, byte[] model, ImageView tartgetIv, int w, int h) {
-        loadNormalPic(context, "", 0, null, null, model, tartgetIv, w, h);
+        loadNormalPic(context, "", 0, null, null, model, tartgetIv, w, h, R.drawable.zero_gray, R.color.default_bg);
     }
 
     /**
@@ -1322,7 +1316,7 @@ public class GlideUtils {
      * @param w
      * @param h
      */
-    private static void loadNormalPic(Context context, String string, Integer resourceId, File file, Uri uri, byte[] model, ImageView targetIv, int w, int h) {
+    private static void loadNormalPic(Context context, String string, Integer resourceId, File file, Uri uri, byte[] model, ImageView targetIv, int w, int h, int error, int place) {
 
         //来源于String
         if (!TxtUtil.isEmpty(string) && resourceId == 0 && file == null && uri == null && model == null) {
@@ -1330,8 +1324,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(string)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.default_bg)
-                    .error(R.drawable.image_error)
+                    .placeholder(place)
+                    .error(error)
                     .centerCrop()
                     .crossFade()
                     .override(w, h)
@@ -1341,8 +1335,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(string)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.default_bg)
-                    .error(R.drawable.image_error)
+                    .placeholder(place)
+                    .error(error)
                     .centerCrop()
                     .crossFade()
                     .thumbnail(0.8f)
@@ -1356,8 +1350,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(resourceId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.default_bg)
-                    .error(R.drawable.image_error)
+                    .placeholder(place)
+                    .error(error)
                     .centerCrop()
                     .crossFade()
                     .override(w, h)
@@ -1367,8 +1361,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(resourceId)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.default_bg)
-                    .error(R.drawable.image_error)
+                    .placeholder(place)
+                    .error(error)
                     .centerCrop()
                     .crossFade()
                     .thumbnail(0.8f)
@@ -1382,8 +1376,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(file)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.default_bg)
-                    .error(R.drawable.image_error)
+                    .placeholder(place)
+                    .error(error)
                     .centerCrop()
                     .crossFade()
                     .override(w, h)
@@ -1393,8 +1387,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(file)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.default_bg)
-                    .error(R.drawable.image_error)
+                    .placeholder(place)
+                    .error(error)
                     .centerCrop()
                     .thumbnail(0.8f)
                     .crossFade()
@@ -1408,8 +1402,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(uri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.default_bg)
-                    .error(R.drawable.image_error)
+                    .placeholder(place)
+                    .error(error)
                     .centerCrop()
                     .crossFade()
                     .thumbnail(0.8f)
@@ -1419,8 +1413,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(uri)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.default_bg)
-                    .error(R.drawable.image_error)
+                    .placeholder(place)
+                    .error(error)
                     .centerCrop()
                     .thumbnail(0.8f)
                     .crossFade()
@@ -1434,8 +1428,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(model)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.default_bg)
-                    .error(R.drawable.image_error)
+                    .placeholder(place)
+                    .error(error)
                     .centerCrop()
                     .thumbnail(0.8f)
                     .crossFade()
@@ -1445,8 +1439,8 @@ public class GlideUtils {
                 Glide.with(context)
                     .load(model)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.color.default_bg)
-                    .error(R.drawable.image_error)
+                    .placeholder(place)
+                    .error(error)
                     .centerCrop()
                     .thumbnail(0.8f)
                     .crossFade()
@@ -1732,126 +1726,9 @@ public class GlideUtils {
                     return false;
                 }
             })
-            .error(R.drawable.image_error)
+            .error(R.drawable.zero_gray)
             .crossFade()
             .thumbnail(0.5f)
             .into(tartgetIv);
-    }
-
-    /**************************6、以下 没有占位图***************************/
-    public static void loadNormalPicNoPlace(Context context, Integer resourceId, ImageView tartgetIv) {
-        loadNormalPicNoPlace(context, "", resourceId, null, null, null, tartgetIv, 0, 0);
-    }
-
-    private static void loadNormalPicNoPlace(Context context, String string, Integer resourceId, File file, Uri uri, byte[] model, ImageView targetIv, int w, int h) {
-
-        //来源于String
-        if (!TxtUtil.isEmpty(string) && resourceId == 0 && file == null && uri == null && model == null) {
-            if (w != 0 && h != 0) {
-                Glide.with(context)
-                    .load(string)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .centerCrop()
-                    .crossFade()
-                    .override(w, h)
-                    .thumbnail(0.8f)
-                    .into(targetIv);
-            } else {
-                Glide.with(context)
-                    .load(string)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .centerCrop()
-                    .crossFade()
-                    .thumbnail(0.8f)
-                    .into(targetIv);
-            }
-        }
-        //来源于Integer
-        else if (resourceId != 0 && TxtUtil.isEmpty(string) && file == null && uri == null && model == null) {
-            if (w != 0 && h != 0) {
-                Glide.with(context)
-                    .load(resourceId)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .centerCrop()
-                    .crossFade()
-                    .override(w, h)
-                    .thumbnail(0.8f)
-                    .into(targetIv);
-            } else {
-                Glide.with(context)
-                    .load(resourceId)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .centerCrop()
-                    .crossFade()
-                    .thumbnail(0.8f)
-                    .into(targetIv);
-            }
-        }
-
-        //来源于File
-        else if (file != null && TxtUtil.isEmpty(string) && resourceId == 0 && uri == null && model == null) {
-            if (w != 0 && h != 0) {
-                Glide.with(context)
-                    .load(file)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .centerCrop()
-                    .crossFade()
-                    .override(w, h)
-                    .thumbnail(0.8f)
-                    .into(targetIv);
-            } else {
-                Glide.with(context)
-                    .load(file)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .centerCrop()
-                    .thumbnail(0.8f)
-                    .crossFade()
-                    .into(targetIv);
-            }
-        }
-
-        //来源于Uri
-        else if (uri != null && TxtUtil.isEmpty(string) && resourceId == 0 && file == null && model == null) {
-            if (w != 0 && h != 0) {
-                Glide.with(context)
-                    .load(uri)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .centerCrop()
-                    .crossFade()
-                    .thumbnail(0.8f)
-                    .override(w, h)
-                    .into(targetIv);
-            } else {
-                Glide.with(context)
-                    .load(uri)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .centerCrop()
-                    .thumbnail(0.8f)
-                    .crossFade()
-                    .into(targetIv);
-            }
-        }
-
-        //来源于byte[]
-        else if (model != null && TxtUtil.isEmpty(string) && resourceId == 0 && file == null && uri == null) {
-            if (w != 0 && h != 0) {
-                Glide.with(context)
-                    .load(model)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .centerCrop()
-                    .thumbnail(0.8f)
-                    .crossFade()
-                    .override(w, h)
-                    .into(targetIv);
-            } else {
-                Glide.with(context)
-                    .load(model)
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .centerCrop()
-                    .thumbnail(0.8f)
-                    .crossFade()
-                    .into(targetIv);
-            }
-        }
     }
 }

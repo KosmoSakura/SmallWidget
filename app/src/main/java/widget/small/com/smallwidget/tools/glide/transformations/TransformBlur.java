@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.tools.glide.trans;
+package widget.small.com.smallwidget.tools.glide.transformations;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -22,6 +22,7 @@ import com.bumptech.glide.load.resource.bitmap.BitmapResource;
  * E-mail: yi.zhang@rato360.com
  */
 public class TransformBlur implements Transformation<Bitmap> {
+
     public static int MAX_RADIUS = 25;
 
     private Context mContext;
@@ -52,8 +53,8 @@ public class TransformBlur implements Transformation<Bitmap> {
 
             final RenderScript rs = RenderScript.create(mContext);
             final Allocation input = Allocation.createFromBitmap(rs, source,
-                Allocation.MipmapControl.MIPMAP_NONE,
-                Allocation.USAGE_SCRIPT);
+                    Allocation.MipmapControl.MIPMAP_NONE,
+                    Allocation.USAGE_SCRIPT);
             final Allocation output = Allocation.createTyped(rs, input.getType());
             final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
             script.setRadius(mRadius /* e.g. 3.f */);

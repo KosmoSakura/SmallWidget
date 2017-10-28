@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import widget.small.com.smallwidget.base.App;
 import widget.small.com.smallwidget.tools.TxtUtil;
 import widget.small.com.smallwidget.tools.base.Code;
-import widget.small.com.smallwidget.tools.base.Config;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -74,7 +73,7 @@ public class ImageCollector {
 
 
     private void openCamera() {
-        imagePath = Config.IMAGE_DOWNLOAD + System.currentTimeMillis() + ".jpg";
+        imagePath = Code.Config.IMAGE_DOWNLOAD + System.currentTimeMillis() + ".jpg";
         File outputImage = new File(imagePath);
         //拍照后相片的Uri
         Uri imageUri;

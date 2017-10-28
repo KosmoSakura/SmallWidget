@@ -39,6 +39,13 @@ public class ImageCollectorHelper {
         collector.onActivityResult(requestCode, resultCode, data);
     }
 
+    public void pickFromCamera() {
+        collector.getCameraPhoto();
+    }
+    public void pickFromAlbum() {
+        collector.getLocalPhoto();
+    }
+
     public void showCollectorPop() {
         collector.setOnImageCollectListener(new ImageCollector.ImageCollectListener() {
             @Override

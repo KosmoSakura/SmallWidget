@@ -73,7 +73,7 @@ public class WidgetService extends Service {
                 count = 0;
                 while (true) {
                     count++;
-                    Intent updateIntent = new Intent(Code.Constants.ActionUpdateAll);
+                    Intent updateIntent = new Intent(Code.Broadcast.ActionUpdateAll);
                     updateIntent.putExtra("weight", "112斤"+count);
                     mContext.sendBroadcast(updateIntent);
                     Thread.sleep(UPDATE_TIME);
