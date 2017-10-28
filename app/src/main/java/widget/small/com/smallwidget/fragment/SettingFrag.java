@@ -18,7 +18,7 @@ import widget.small.com.smallwidget.tools.VibrateHelp;
  * Created by ZeroProject on 2016/5/25 17:00
  */
 public class SettingFrag extends BaseFragment implements View.OnClickListener {
-    private CardView time, theme, clear;
+    private CardView time, theme, clear,more;
 
 
     @Override
@@ -31,6 +31,7 @@ public class SettingFrag extends BaseFragment implements View.OnClickListener {
         time = findView(R.id.setting_time);
         theme = findView(R.id.setting_theme);
         clear = findView(R.id.setting_card_3);
+        more = findView(R.id.setting_card_4);
     }
 
     @Override
@@ -61,6 +62,9 @@ public class SettingFrag extends BaseFragment implements View.OnClickListener {
                 DaoTheme.getInstance().deleteAll();
                 ToastUtil.CustomShort("估计主题哪里现在应该正常了吧");
                 break;
+            case R.id.setting_card_4://
+                ToastUtil.CustomShort("真的！！");
+                break;
             default:
                 break;
         }
@@ -71,6 +75,7 @@ public class SettingFrag extends BaseFragment implements View.OnClickListener {
         time.setOnClickListener(this);
         theme.setOnClickListener(this);
         clear.setOnClickListener(this);
+        more.setOnClickListener(this);
     }
 
     @Override
