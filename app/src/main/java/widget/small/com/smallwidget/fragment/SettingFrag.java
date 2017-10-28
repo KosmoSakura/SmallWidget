@@ -65,8 +65,6 @@ public class SettingFrag extends BaseFragment implements View.OnClickListener {
             case R.id.setting_card_4://
                 ToastUtil.CustomShort("真的！！");
                 break;
-            default:
-                break;
         }
     }
 
