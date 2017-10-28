@@ -1,5 +1,6 @@
 package widget.small.com.smallwidget.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -37,7 +38,7 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        final Handler hans = new Handler() {
+        @SuppressLint("HandlerLeak") final Handler hans = new Handler() {
             @Override
             public void handleMessage(Message msg) {
 
