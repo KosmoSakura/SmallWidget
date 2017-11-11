@@ -157,7 +157,7 @@
                 android:layout_below="@id/imageView11"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="@dimen/px30"
-                android:text="重置数据"
+                android:text="重置数据1"
                 android:textColor="@color/default_blue"/>
 
         </RelativeLayout>
