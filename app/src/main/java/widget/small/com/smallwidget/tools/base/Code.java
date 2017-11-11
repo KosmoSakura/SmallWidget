@@ -25,6 +25,7 @@ public interface Code {
 
         int TAKE_PHOTO = 25;//拍照
         int CHOOSE_PHOTO = 77;//相册
+        int Photo_Back = 77;//相册
         int REQUEST_PREVIEW = 99;//预览请求状态码
     }
 
@@ -52,7 +53,6 @@ public interface Code {
     }
 
     class Config {
-        public static int activityCount = 0;
         public static String BASE_PATH = null;
         public static String CACHE_PATH = null;
         public static String SAVE_SD_FLODER = null;//图像缓存SD卡路径的目录，主要用于缓存

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.View;
 
 import widget.small.com.smallwidget.R;
+import widget.small.com.smallwidget.activity.FaceActivity;
 import widget.small.com.smallwidget.activity.ThemeActivity;
 import widget.small.com.smallwidget.activity.TimeActivity;
 import widget.small.com.smallwidget.base.BaseFragment;
@@ -15,9 +16,17 @@ import widget.small.com.smallwidget.tools.VibrateHelp;
 
 /**
  * Created by ZeroProject on 2016/5/25 17:00
+ * <p>
+ * 为Android提供IOS平台自有的界面视图切换动画而开发此库，工作量也不小，感谢支持SwitchLayout
+ * <p>
+ * 如果想自定义特效动画时长的话，请在此四个变量对应设置 SwitchLayout.animDuration = 1000;
+ * SwitchLayout.longAnimDuration = 2000; BaseAnimViewS.animDuration = 1000;
+ * BaseAnimViewS.longAnimDuration = 2000;即可。单位毫秒。
+ * <p>
+ * 以后SwitchLayout将会划分入我的SmartUI库下面
  */
 public class SettingFrag extends BaseFragment implements View.OnClickListener {
-    private View time, theme, clear,more;
+    private View time, theme, clear, more;
 
 
     @Override
@@ -62,7 +71,8 @@ public class SettingFrag extends BaseFragment implements View.OnClickListener {
                 ToastUtil.CustomShort("估计主题哪里现在应该正常了吧");
                 break;
             case R.id.setting_card_4://
-                ToastUtil.CustomShort("真的！！");
+                intent = new Intent(context, FaceActivity.class);
+                startActivity(intent);
                 break;
         }
     }

@@ -1,7 +1,6 @@
 package widget.small.com.smallwidget.base;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,7 @@ import android.widget.BaseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import autolayout.utils.AutoUtils;
 import widget.small.com.smallwidget.R;
 
 /**
@@ -71,7 +71,6 @@ public abstract class ABaseAdapter<T> extends BaseAdapter {
 
     /**
      * 添加单个数据
-     * @param bean
      * */
     public void addItem(T bean) {
         this.listData.add(bean);
@@ -128,18 +127,13 @@ public abstract class ABaseAdapter<T> extends BaseAdapter {
         return resId;
     }
 
-    /**
-     * @param position
-     * @param convertView
-     * @param parent
-     * @return
-     */
     @SuppressWarnings("unchecked")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         IViewHolder<T> viewHolder = null;
         if (convertView == null|| convertView.getTag(R.id.tag_viewholder) == null) {
             convertView = layoutInflater.inflate(getItemViewId(position), null);
+            AutoUtils.autoSize(convertView);
             viewHolder = getViewHolder(position);
             viewHolder.createView(convertView);
             convertView.setTag(R.id.tag_viewholder, viewHolder);
@@ -150,31 +144,10 @@ public abstract class ABaseAdapter<T> extends BaseAdapter {
         return convertView;
     }
 
-    /**
-     * @param position
-     * @return
-     */
     protected abstract IViewHolder<T> getViewHolder(int position);
 
-    /**
-     * @return
-     */
     public Context getContext() {
         return context;
     }
 
-    public void kosmosLog(String msg) {
-        Log.d("kosmos", msg);
-    }
-
-    public void kosmosLogE(String msg) {
-        Log.e("kosmos", msg);
-    }
-    public void kosmosLogI(String msg) {
-        Log.i("kosmos", msg);
-    }
-
-    public void kosmosLogV(String msg) {
-        Log.v("kosmos", msg);
-    }
 }

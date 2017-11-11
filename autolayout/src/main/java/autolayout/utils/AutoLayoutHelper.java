@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import autolayout.AutoLayoutInfo;
+import autolayout.R;
 import autolayout.attr.HeightAttr;
 import autolayout.attr.MarginAttr;
 import autolayout.attr.MarginBottomAttr;
@@ -41,7 +42,6 @@ import autolayout.attr.PaddingTopAttr;
 import autolayout.attr.TextSizeAttr;
 import autolayout.attr.WidthAttr;
 import autolayout.config.AutoLayoutConifg;
-import zhi.soft.com.autolayout.R;
 
 
 public class AutoLayoutHelper {

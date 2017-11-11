@@ -1,8 +1,6 @@
 package widget.small.com.smallwidget.base;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.Service;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -12,44 +10,97 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import java.util.List;
-
 import autolayout.AutoLayoutActivity;
 import greendao.bean.Themes;
 import widget.small.com.smallwidget.R;
 import widget.small.com.smallwidget.db.DaoTheme;
 import widget.small.com.smallwidget.tools.SystemBarTintManager;
 import widget.small.com.smallwidget.tools.base.Code;
+import widget.small.com.smallwidget.widget.switchlayout.BaseAnimViewS;
+import widget.small.com.smallwidget.widget.switchlayout.BaseEffects;
+import widget.small.com.smallwidget.widget.switchlayout.SwichLayoutInterFace;
+import widget.small.com.smallwidget.widget.switchlayout.SwitchLayout;
 
 
-
-public abstract class BaseActivity extends AutoLayoutActivity {
+/**
+ *
+ */
+public abstract class BaseActivity extends AutoLayoutActivity implements SwichLayoutInterFace {
 
 /*
     private Intent serviceIntent;
     private TimeService binder;
 */
+    /**
+     * 顶部划入
+     */
+    protected final int Anim_Top_Slide = 1;
 
+    /**
+     * 左上角缩放
+     */
+    protected final int Anim_Left_Scale = 2;
+    /**
+     * 左侧中心旋转
+     */
+    protected final int Anim_Left_Rotate_Cneter = 3;
+    /**
+     * 左上角旋转
+     */
+    protected final int Anim_Left_Rotate_Top = 4;
+    /**
+     * 横向展开
+     */
+    protected final int Anim_Horizontal_Fold = 5;
+    /**
+     * 纵向展开
+     */
+    protected final int Anim_Vertical_Fold = 6;
 
-
-    //里面做接收跳转信息初始化等操作
-    protected void initIntent(Intent intent) {
-        if (intent == null) {
-            return;
-        }
-
+    /**
+     * 为Android提供IOS平台自有的界面视图切换动画而开发此库，工作量也不小，感谢支持SwitchLayout
+     * <p>
+     * 设置进入Activity的Activity特效动画，同理可拓展为布局动画
+     * <p>
+     * 如果想自定义特效动画时长的话，请在此四个变量对应设置即可。单位毫秒。
+     * SwitchLayout.animDuration = 1000;
+     * SwitchLayout.longAnimDuration = 2000;
+     * BaseAnimViewS.animDuration = 1000;
+     * BaseAnimViewS.longAnimDuration = 2000;
+     * <p>
+     * 以后SwitchLayout将会划分入我的SmartUI库下面
+     */
+    protected int initScreen() {
+        SwitchLayout.animDuration = 800;
+        BaseAnimViewS.animDuration = 800;
+        SwitchLayout.longAnimDuration = 800;
+        BaseAnimViewS.longAnimDuration = 800;
+        return 0;
     }
+
+    @Override
+    public void onBackPressed() {
+        if (initScreen() == 0) {
+            super.onBackPressed();
+        } else {
+            setExitSwichLayout();
+        }
+    }
+
     protected abstract int getLayoutResId();//所有子类必须实现，绑定Act视图
 
     protected abstract void initView();//所有子类必须实现，里面做页面初始化，找id，等操作
 
-    protected abstract void initListener();//所有子类必须实现，里面做监听器的设置。
+    protected void initListener() {
+    }
+
 
     protected abstract void initData();//所有子类必须实现，里面做数据方面等操作。
 
     //消息传到机制
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         //屏幕常亮
 //        this.getWindow().setFlags(WindowManager.AutoLayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.AutoLayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -71,6 +122,7 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     public <V extends View> V findView(int resId) {
         return (V) findViewById(resId);
     }
+
     /**
      * 计时器服务
      */
@@ -94,103 +146,91 @@ public abstract class BaseActivity extends AutoLayoutActivity {
         public void onServiceDisconnected(ComponentName name) {
         }
     };*/
-
-    /**
-     * 判断app是否处于前台
-     */
-    public boolean isAppForeground() {
-        ActivityManager activityManager = (ActivityManager) getSystemService(Service.ACTIVITY_SERVICE);
-        List<ActivityManager.RunningAppProcessInfo> runningAppProcessInfoList = activityManager.getRunningAppProcesses();
-        if (runningAppProcessInfoList == null) {
-            return false;
-        }
-        for (ActivityManager.RunningAppProcessInfo processInfo : runningAppProcessInfoList) {
-            if (Code.Config.activityCount > 0 && processInfo.processName.equals(getPackageName()) &&
-                processInfo.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
-//                ZeroI("栈包名：" + processInfo.processName + "---App包名：" + getPackageName() + "......." + processInfo.importance);
-                return true;
-            }
-        }
-        return false;
-    }
-
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
         super.setContentView(layoutResID);
+        if (initScreen() != 0) {
+            setEnterSwichLayout();
+        }
         initView();
         initIntent(getIntent());
         initData();
         initListener();
     }
 
+    protected void initIntent(Intent intent) {
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        Code.Config.activityCount++;
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
-        Code.Config.activityCount--;
+    public void setEnterSwichLayout() {
+        // 三个参数分别为（Activity/View，是否关闭Activity，特效（可为空））
+        switch (initScreen()) {
+            case Anim_Top_Slide://顶部划入
+                SwitchLayout.getSlideFromTop(this, false, BaseEffects.getReScrollEffect());
+                break;
+            case Anim_Left_Scale://左上角缩放
+                SwitchLayout.ScaleBigLeftTop(this, false, null);
+                break;
+            case Anim_Left_Rotate_Cneter://左侧中心旋转
+                SwitchLayout.RotateLeftCenterIn(this, false, null);
+                break;
+            case Anim_Left_Rotate_Top://左上角旋转
+                SwitchLayout.RotateLeftTopIn(this, false, null);
+                break;
+            case Anim_Horizontal_Fold://横向展开
+                SwitchLayout.ScaleToBigHorizontalIn(this, false, null);
+                break;
+            case Anim_Vertical_Fold://纵向展开
+                SwitchLayout.ScaleToBigVerticalIn(this, false, null);
+                break;
+        }
+
+//        SwitchLayout.get3DRotateFromLeft(this, false, null);//3D翻转
+//        SwitchLayout.getSlideFromBottom(this, false, BaseEffects.getMoreSlowEffect());//底部划入
+//        SwitchLayout.getSlideFromLeft(this, false, BaseEffects.getLinearInterEffect());//左侧划入
+//        SwitchLayout.getSlideFromRight(this, false, null);//右侧划入
+//        SwitchLayout.getFadingIn(this);//淡入淡出
+//        SwitchLayout.ScaleBig(this, false, null);//中心缩放
+//        SwitchLayout.FlipUpDown(this, false, BaseEffects.getQuickToSlowEffect()); //上下翻转
+//        SwitchLayout.getShakeMode(this, false, null, 1);//震动模式
+//        SwitchLayout.RotateCenterIn(this, false, null); //中心旋转
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        App.getInstance().removeRunActivity(this);
+    public void setExitSwichLayout() {
+//        三个参数分别为（Activity/View，是否关闭Activity，特效（可为空））
+        switch (initScreen()) {
+            case Anim_Top_Slide://顶部划入
+                SwitchLayout.getSlideToTop(this, true, BaseEffects.getReScrollEffect());
+                break;
+            case Anim_Left_Scale://左上角缩放
+                SwitchLayout.ScaleSmallLeftTop(this, true, null);
+                break;
+            case Anim_Left_Rotate_Cneter://左侧中心旋转
+                SwitchLayout.RotateLeftCenterOut(this, true, null);
+                break;
+            case Anim_Left_Rotate_Top://左上角旋转
+                SwitchLayout.RotateLeftTopOut(this, true, null);
+                break;
+            case Anim_Horizontal_Fold://横向展开
+                SwitchLayout.ScaleToBigHorizontalOut(this, true, null);
+                break;
+            case Anim_Vertical_Fold://纵向展开
+                SwitchLayout.ScaleToBigVerticalOut(this, true, null);
+                break;
+        }
+
+//        SwitchLayout.get3DRotateFromRight(this, true, null);//3D
+//        SwitchLayout.getSlideToBottom(this, true, BaseEffects.getMoreSlowEffect());//底部划入
+//        SwitchLayout.getSlideToLeft(this, true, BaseEffects.getLinearInterEffect());//左侧划入
+//        SwitchLayout.getSlideToRight(this, true, null);//右侧划入
+//        SwitchLayout.getFadingOut(this, true);//淡入淡出
+//        SwitchLayout.ScaleSmall(this, true, null);//中心缩放
+//        SwitchLayout.FlipUpDown(this, true, BaseEffects.getQuickToSlowEffect());//上下翻转
+//        SwitchLayout.getShakeMode(this, true, null, 1);  //震动模式
+//        SwitchLayout.RotateCenterOut(this, true, null);//中心旋转
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        App.getInstance().addRunActivity(this);//添加act
-    }
-
-
-    /**
-     * 统一左上角结束页面功能
-     *
-     * @param view
-     */
-
-    public void onEventClick(View view) {
-    }
-
-
-//    /**
-//     * 统一结束页面动画，与进入动画相反
-//     */
-//    @Override
-//    public void finish() {
-//        super.finish();
-//        overridePendingTransition(R.anim.sys_push_right_in, R.anim.sys_push_right_out);
-//    }
-//
-//
-//    /**
-//     * @param intent 统一启动页面动画，与结束动画相反
-//     */
-//    @Override
-//    public void startActivity(Intent intent) {
-//        // TODO Auto-generated method stub
-//        super.startActivity(intent);
-//        overridePendingTransition(R.anim.sys_push_left_in, R.anim.sys_push_left_out);
-//    }
-//
-//    /**
-//     * 统一启动页面动画，与结束动画相反
-//     *
-//     * @param intent
-//     * @param requestCode
-//     */
-//    @Override
-//    public void startActivityForResult(Intent intent, int requestCode) {
-//        // TODO Auto-generated method stub
-//        super.startActivityForResult(intent, requestCode);
-//        overridePendingTransition(R.anim.sys_push_left_in, R.anim.sys_push_left_out);
-//    }
 
 
     /**
@@ -215,7 +255,6 @@ public abstract class BaseActivity extends AutoLayoutActivity {
             colorBar = color;
         }
 
-//        Logger.kosmos_d("当前版本：" + Build.VERSION.SDK_INT + "\n比较版本：" + Build.VERSION_CODES.KITKAT);
         //android版本：4.4
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window win = act.getWindow();

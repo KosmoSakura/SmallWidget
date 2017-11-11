@@ -13,10 +13,10 @@ import widget.small.com.smallwidget.R;
 import widget.small.com.smallwidget.adapter.ThemeAdapter;
 import widget.small.com.smallwidget.base.BaseActivity;
 import widget.small.com.smallwidget.bean.ThemeBean;
-import widget.small.com.smallwidget.tools.base.Code;
 import widget.small.com.smallwidget.db.DaoTheme;
 import widget.small.com.smallwidget.tools.ToastUtil;
 import widget.small.com.smallwidget.tools.TxtUtil;
+import widget.small.com.smallwidget.tools.base.Code;
 import widget.small.com.smallwidget.widget.NoScrollListView;
 
 /**
@@ -32,6 +32,7 @@ public class ThemeActivity extends BaseActivity {
     private ThemeAdapter adapter;
     private List<ThemeBean> list;
     private DaoTheme theme;
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -51,7 +52,6 @@ public class ThemeActivity extends BaseActivity {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     private void addDatas() {
         List<Themes> listDb = new ArrayList<>();
         listDb.add(new Themes((long) 0, false, "主题暗红", Code.System.BASE + 1, R.color.red_dark));
@@ -85,6 +85,7 @@ public class ThemeActivity extends BaseActivity {
     protected int getLayoutResId() {
         return R.layout.activity_theme;
     }
+
 
     @Override
     protected void initListener() {

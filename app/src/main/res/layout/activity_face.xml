@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="widget.small.com.smallwidget.activity.FaceActivity"
+    tools:ignore="PxUsage">
+
+    <widget.small.com.smallwidget.widget.FaceOverlayView
+        android:id="@+id/face_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/default_gray"
+        app:layout_constraintDimensionRatio="2:1"/>
+
+    <ImageView
+        android:id="@+id/face_show"
+        android:layout_width="match_parent"
+        android:layout_height="500px"
+        android:layout_marginTop="@dimen/px30"
+        android:background="@color/default_gray"
+        app:layout_constraintTop_toBottomOf="@id/face_overlay"
+        />
+
+</android.support.constraint.ConstraintLayout>

@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import autolayout.utils.AutoUtils;
 import widget.small.com.smallwidget.tools.glide.GlideUtils;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
@@ -40,19 +41,15 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         return holder;
     }
 
-    public static ViewHolder createViewHolder(Context context,
-                                              ViewGroup parent, int layoutId) {
-        View itemView = LayoutInflater.from(context).inflate(layoutId, parent,
-            false);
+    public static ViewHolder createViewHolder(Context context, ViewGroup parent, int layoutId) {
+        View itemView = LayoutInflater.from(context).inflate(layoutId, parent, false);
+        AutoUtils.autoSize(itemView);
         ViewHolder holder = new ViewHolder(context, itemView);
         return holder;
     }
 
     /**
      * 通过viewId获取控件
-     *
-     * @param viewId
-     * @return
      */
     public <T extends View> T getView(int viewId) {
         View view = mViews.get(viewId);
@@ -72,10 +69,6 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
     /**
      * 设置TextView的值
-     *
-     * @param viewId
-     * @param text
-     * @return
      */
     public ViewHolder setText(int viewId, String text) {
         TextView tv = getView(viewId);

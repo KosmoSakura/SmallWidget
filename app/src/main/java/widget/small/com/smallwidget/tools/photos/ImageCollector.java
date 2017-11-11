@@ -22,7 +22,6 @@ import widget.small.com.smallwidget.base.App;
 import widget.small.com.smallwidget.tools.TxtUtil;
 import widget.small.com.smallwidget.tools.base.Code;
 
-import static android.app.Activity.RESULT_OK;
 
 /**
  * Description:图片采集器
@@ -78,7 +77,7 @@ public class ImageCollector {
         //拍照后相片的Uri
         Uri imageUri;
         if (Build.VERSION.SDK_INT >= 24) {
-            imageUri = FileProvider.getUriForFile(App.getInstance(), "com.rato.tianyi.FileProvider", outputImage);
+            imageUri = FileProvider.getUriForFile(App.getInstance(), "widget.small.com.smallwidget.FileProvider", outputImage);
         } else {
             imageUri = Uri.fromFile(outputImage);
         }
@@ -108,12 +107,12 @@ public class ImageCollector {
     void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case Code.System.TAKE_PHOTO:
-                if (resultCode == RESULT_OK) {
+                if (resultCode == Code.System.Photo_Back) {
                     handler.sendMessage(handler.obtainMessage(Code.System.TAKE_PHOTO + 5, imagePath));
                 }
                 break;
             case Code.System.CHOOSE_PHOTO:
-                if (resultCode == RESULT_OK) {
+                if (resultCode == Code.System.Photo_Back) {
                     ArrayList<String> list = data.getStringArrayListExtra(EXTRA_RESULT);
                     handler.sendMessage(handler.obtainMessage(Code.System.CHOOSE_PHOTO + 5, list.get(0)));
 //                    String path = "";

@@ -38,11 +38,20 @@ public class SplashActivity extends BaseActivity {
     protected void initView() {
         splasher = findView(R.id.splash_image);
         lay = findView(R.id.splash_image_lay);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        /*  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />*/
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (verifyPermissions(SplashActivity.this
                 , Manifest.permission.READ_EXTERNAL_STORAGE
-                , Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                , Manifest.permission.WRITE_EXTERNAL_STORAGE
+                , Manifest.permission.CAMERA)) {
                 initPathDatas(); //初始化设备信息
             }
         } else {

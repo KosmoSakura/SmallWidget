@@ -38,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -60,4 +61,5 @@ dependencies {
     compile files('libs/zxing.jar')
 //    compile 'com.zhy:autolayout:1.4.5'
     implementation project(':autolayout')
+    compile 'com.google.android.gms:play-services-vision:11.6.0'
 }

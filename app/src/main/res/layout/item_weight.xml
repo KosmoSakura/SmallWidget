@@ -18,20 +18,19 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="25dp"
-
+            android:layout_height="@dimen/px75"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/item_theme_month"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:padding="@dimen/px6"
                 android:text="265才打算"
                 android:textColor="@color/red_dark"
-                android:textSize="12sp"
+                android:textSize="@dimen/px36"
                 android:typeface="monospace"
                 />
 
@@ -45,14 +44,14 @@
             <TextView
                 android:id="@+id/item_theme_day"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:paddingBottom="@dimen/px6"
                 android:paddingLeft="@dimen/px60"
                 android:paddingTop="@dimen/px6"
                 android:text="265才打算"
                 android:textColor="@color/default_blue"
-                android:textSize="12sp"
+                android:textSize="@dimen/px36"
                 android:typeface="monospace"
                 android:visibility="gone"
                 />
@@ -70,8 +69,8 @@
 
             <ImageView
                 android:id="@+id/item_theme_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="@dimen/px150"
+                android:layout_height="@dimen/px150"
                 android:layout_marginRight="@dimen/px30"
                 android:layout_marginTop="@dimen/px6"
                 android:visibility="gone"/>
@@ -79,7 +78,7 @@
             <LinearLayout
                 android:id="@+id/item_theme_lay_1"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="@dimen/px75"
                 android:layout_toRightOf="@id/item_theme_icon"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -93,14 +92,14 @@
                     android:layout_marginLeft="@dimen/dp10"
                     android:gravity="center_vertical"
                     android:text="265才打算"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/px42"
                     />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/item_theme_lay_2"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="@dimen/px75"
                 android:layout_below="@id/item_theme_lay_1"
                 android:layout_toRightOf="@id/item_theme_icon"
                 android:gravity="center_vertical"
@@ -111,11 +110,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginLeft="@dimen/px30"
                     android:gravity="center_vertical"
                     android:text="150"
                     android:textColor="@color/default_red"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/px42"
                     />
 
                 <TextView
@@ -126,7 +125,7 @@
                     android:layout_marginLeft="@dimen/px30"
                     android:gravity="center_vertical"
                     android:text="斤"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/px42"
                     />
             </LinearLayout>
         </RelativeLayout>

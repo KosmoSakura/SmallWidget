@@ -1,6 +1,7 @@
 package widget.small.com.smallwidget.tools.glide;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -51,9 +52,21 @@ public class GlideUtils {
             .transform(new TransformCircle(App.getInstance()))
             .into(tartgetIv);
     }
+
     public static void loadToastImage(int resourceId, ImageView tartgetIv) {
         Glide.with(App.getInstance())
             .load(resourceId)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .placeholder(R.color.toast_black)
+            .error(R.drawable.zero_gray)
+            .centerCrop()
+            .crossFade()
+            .into(tartgetIv);
+    }
+
+    public static void loadBitmap(Context context, Bitmap bmp, ImageView tartgetIv) {
+        Glide.with(context)
+            .load(bmp)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .placeholder(R.color.toast_black)
             .error(R.drawable.zero_gray)
