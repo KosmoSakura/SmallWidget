@@ -2,7 +2,6 @@ package widget.small.com.smallwidget.fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.view.View;
 
 import widget.small.com.smallwidget.R;
@@ -18,7 +17,7 @@ import widget.small.com.smallwidget.tools.VibrateHelp;
  * Created by ZeroProject on 2016/5/25 17:00
  */
 public class SettingFrag extends BaseFragment implements View.OnClickListener {
-    private CardView time, theme, clear,more;
+    private View time, theme, clear,more;
 
 
     @Override

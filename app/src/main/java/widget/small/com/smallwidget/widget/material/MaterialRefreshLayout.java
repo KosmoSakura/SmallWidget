@@ -149,7 +149,7 @@ public class MaterialRefreshLayout extends FrameLayout {
 
         if (isSunStyle) {
             /*mSunLayout = new SunLayout(context);
-            LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Util.dip2px(context, hIGHER_HEAD_HEIGHT));
+            AutoLayoutParams layoutParams = new AutoLayoutParams(ViewGroup.AutoLayoutParams.MATCH_PARENT, Util.dip2px(context, hIGHER_HEAD_HEIGHT));
             layoutParams.gravity = Gravity.TOP;
             mSunLayout.setVisibility(View.GONE);
             setHeaderView(mSunLayout);*/

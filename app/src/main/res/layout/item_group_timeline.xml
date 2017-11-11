@@ -15,7 +15,7 @@
         <TextView
             android:id="@+id/item_group_top_line"
             android:background="@color/default_blue"
-            android:layout_width="@dimen/line_with"
+            android:layout_width="@dimen/px2"
             android:layout_height="50dp"/>
 
         <TextView
@@ -30,7 +30,7 @@
         <TextView
             android:id="@+id/item_group_bottom_line"
             android:background="@color/default_blue"
-            android:layout_width="@dimen/line_with"
+            android:layout_width="@dimen/px2"
             android:layout_height="match_parent"/>
 
     </LinearLayout>

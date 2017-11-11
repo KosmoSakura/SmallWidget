@@ -16,7 +16,6 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 
 import widget.small.com.smallwidget.R;
-import widget.small.com.smallwidget.tools.logger.Logger;
 
 
 public class ArcMenu extends ViewGroup implements OnClickListener {
@@ -100,8 +99,6 @@ public class ArcMenu extends ViewGroup implements OnClickListener {
         mRadius = (int) a.getDimension(R.styleable.ArcMenu_radius, TypedValue
             .applyDimension(TypedValue.COMPLEX_UNIT_DIP, 100,
                 getResources().getDisplayMetrics()));
-
-        Logger.kosmos_d("position = " + mPosition + " , radius =  " + mRadius);
         a.recycle();
 
     }

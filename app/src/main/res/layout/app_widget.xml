@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:background="@drawable/rect_round_all_cirlce_blue"
         android:orientation="horizontal"
-        android:padding="@dimen/dp5">
+        android:padding="@dimen/px15">
 
         <TextView
             android:layout_width="match_parent"

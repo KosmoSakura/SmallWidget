@@ -25,7 +25,7 @@
     <RelativeLayout
         android:id="@+id/weight_title_rel"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp40"
+        android:layout_height="@dimen/px120"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         >
@@ -36,24 +36,24 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="@dimen/dp5"
-            android:layout_marginLeft="@dimen/dp12"
-            android:layout_marginRight="@dimen/dp12"
-            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginBottom="@dimen/px15"
+            android:layout_marginLeft="@dimen/px36"
+            android:layout_marginRight="@dimen/px36"
+            android:layout_marginTop="@dimen/px15"
             android:background="@drawable/add_poster"
             android:gravity="center_vertical"
             android:text=""
             android:textColor="@color/default_blue"
-            android:textSize="@dimen/sp12"
+            android:textSize="@dimen/px36"
             android:visibility="gone"/>
 
         <LinearLayout
             android:id="@+id/weight_now_lay"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/dp5"
+            android:layout_marginBottom="@dimen/px15"
             android:layout_marginLeft="@dimen/dp10"
-            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginTop="@dimen/px15"
             android:background="@drawable/rect_blue_round_all_cirlce"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -64,7 +64,7 @@
                 android:gravity="center"
                 android:hint="默认记录："
                 android:textColor="@color/default_blue"
-                android:textSize="@dimen/sp12"/>
+                android:textSize="@dimen/px36"/>
 
             <TextView
                 android:id="@+id/weight_now_t"
@@ -73,7 +73,7 @@
                 android:gravity="center"
                 android:hint="无"
                 android:textColor="@color/default_blue"
-                android:textSize="@dimen/sp12"/>
+                android:textSize="@dimen/px36"/>
         </LinearLayout>
 
         <TextView
@@ -81,15 +81,15 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="@dimen/dp5"
-            android:layout_marginLeft="@dimen/dp12"
-            android:layout_marginRight="@dimen/dp12"
-            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginBottom="@dimen/px15"
+            android:layout_marginLeft="@dimen/px36"
+            android:layout_marginRight="@dimen/px36"
+            android:layout_marginTop="@dimen/px15"
             android:background="@drawable/rect_blue_round_all_cirlce"
             android:gravity="center_vertical"
             android:hint="清除"
             android:textColor="@color/default_blue"
-            android:textSize="@dimen/sp12"
+            android:textSize="@dimen/px36"
             android:visibility="gone"/>
 
         <TextView
@@ -100,12 +100,12 @@
             android:gravity="center_vertical"
             android:text="体重记录Demo"
             android:textColor="@color/default_blue"
-            android:textSize="@dimen/sp14"
+            android:textSize="@dimen/px42"
             android:visibility="gone"/>
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/line_heigh"
+            android:layout_height="@dimen/px1"
             android:layout_alignParentBottom="true"
             android:background="@color/default_blue"/>
     </RelativeLayout>
@@ -130,8 +130,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
-            android:paddingLeft="@dimen/dp12"
-            android:paddingRight="@dimen/dp12"
+            android:paddingLeft="@dimen/px36"
+            android:paddingRight="@dimen/px36"
             >
 
         </android.support.v7.widget.RecyclerView>
@@ -157,8 +157,8 @@
 
             <ImageView
                 android:id="@+id/wieght_id_button"
-                android:layout_width="@dimen/dp45"
-                android:layout_height="@dimen/dp45"
+                android:layout_width="@dimen/px135"
+                android:layout_height="@dimen/px135"
                 android:layout_centerInParent="true"
                 android:src="@drawable/rinn_kakashi_s"/>
 

@@ -36,7 +36,7 @@
         <LinearLayout
             android:id="@+id/dia_simple_ll"
             android:layout_width="fill_parent"
-            android:layout_height="@dimen/dp45"
+            android:layout_height="@dimen/px135"
             android:layout_alignParentBottom="true"
             android:orientation="horizontal">
 
@@ -55,7 +55,7 @@
             <ImageView
                 android:id="@+id/dia_simple_line_v_3"
                 android:layout_width="1dp"
-                android:layout_height="@dimen/dp45"
+                android:layout_height="@dimen/px135"
                 android:background="@color/default_blue"
                 />
 
@@ -114,16 +114,16 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/dia_simple_img"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="@dimen/dp5"
+                android:layout_marginBottom="@dimen/px15"
                 android:layout_marginLeft="@dimen/dp10"
                 android:layout_marginRight="@dimen/dp10"
-                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginTop="@dimen/px15"
                 android:background="@drawable/rect_round_rim_blue"
                 android:hint="发现新版本"
                 android:inputType="text"
-                android:paddingBottom="@dimen/dp5"
+                android:paddingBottom="@dimen/px15"
                 android:paddingLeft="@dimen/dp10"
-                android:paddingTop="@dimen/dp5"
+                android:paddingTop="@dimen/px15"
                 android:textColor="@color/default_black"
                 android:textColorHint="#999999"
                 android:textSize="14sp"

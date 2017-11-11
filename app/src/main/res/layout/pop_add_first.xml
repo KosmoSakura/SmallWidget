@@ -4,7 +4,7 @@
               android:layout_height="wrap_content"
               android:background="@drawable/rect_blue_round_all_cirlce"
               android:orientation="vertical"
-              android:padding="@dimen/dp5">
+              android:padding="@dimen/px15">
 
     <TextView
         android:id="@+id/pop_add_first_title"
@@ -23,7 +23,7 @@
         android:background="@null"
         android:gravity="center_vertical"
         android:hint="输入姓名（不可修改）"
-        android:paddingLeft="@dimen/dp5"
+        android:paddingLeft="@dimen/px15"
         android:textColor="@color/default_black"
         android:textSize="12sp"/>
 
@@ -31,12 +31,12 @@
         android:id="@+id/pop_add_first_value"
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginTop="@dimen/px15"
         android:background="@null"
         android:gravity="center_vertical"
         android:hint="输入体重（斤)"
         android:inputType="numberDecimal"
-        android:paddingLeft="@dimen/dp5"
+        android:paddingLeft="@dimen/px15"
         android:textColor="@color/default_black"
         android:textSize="12sp"/>
 
@@ -44,11 +44,11 @@
         android:id="@+id/pop_add_first_time"
         android:layout_width="match_parent"
         android:layout_height="25dp"
-        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginTop="@dimen/px15"
         android:background="@null"
         android:gravity="center_vertical"
         android:hint="选择日期"
-        android:paddingLeft="@dimen/dp5"
+        android:paddingLeft="@dimen/px15"
         android:textColor="@color/default_black"
         android:textSize="12sp"/>
 

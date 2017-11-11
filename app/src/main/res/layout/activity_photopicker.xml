@@ -26,9 +26,9 @@
         android:layout_below="@+id/pickerToolbar"
         android:clipToPadding="false"
         android:columnWidth="120dp"
-        android:horizontalSpacing="@dimen/dp2"
+        android:horizontalSpacing="@dimen/px2"
         android:paddingBottom="?android:attr/actionBarSize"
-        android:verticalSpacing="@dimen/dp2"/>
+        android:verticalSpacing="@dimen/px2"/>
 
     <RelativeLayout
         android:id="@+id/photo_picker_footer"
@@ -49,7 +49,7 @@
             android:gravity="center"
             android:text="所有图片"
             android:textColor="@color/default_blue"
-            android:textSize="@dimen/sp16"/>
+            android:textSize="@dimen/px48"/>
 
         <Button
             android:id="@+id/btnPreview"
@@ -63,6 +63,6 @@
             android:gravity="center"
             android:text="预览"
             android:textColor="@color/default_blue_light"
-            android:textSize="@dimen/sp16"/>
+            android:textSize="@dimen/px48"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -7,8 +7,8 @@
     android:background="@color/white"
     android:orientation="horizontal"
     android:paddingBottom="@dimen/dp10"
-    android:paddingLeft="@dimen/dp12"
-    android:paddingRight="@dimen/dp12"
+    android:paddingLeft="@dimen/px36"
+    android:paddingRight="@dimen/px36"
     android:paddingTop="@dimen/dp10">
 
 

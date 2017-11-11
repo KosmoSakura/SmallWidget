@@ -350,7 +350,7 @@ public class WeightFrag extends BaseFragment implements View.OnClickListener, Po
 
         //第一次添加
         View v_add_first = inflater.inflate(R.layout.pop_add_first, null);
-//        popAddFirst = new PopupWindow(v_add_first, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//        popAddFirst = new PopupWindow(v_add_first, ViewGroup.AutoLayoutParams.MATCH_PARENT, ViewGroup.AutoLayoutParams.MATCH_PARENT);
         popAddFirst = new PopupWindow(context);
 //        popAddFirst.setWidth((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 100, dm));
 //        popAddFirst.setHeight((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 120, dm));

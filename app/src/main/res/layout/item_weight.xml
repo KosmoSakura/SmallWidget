@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/dp10"
-    android:paddingLeft="@dimen/dp12"
-    android:paddingRight="@dimen/dp12"
-    android:paddingTop="@dimen/dp10">
+    android:paddingBottom="@dimen/px30"
+    android:paddingLeft="@dimen/px36"
+    android:paddingRight="@dimen/px36"
+    android:paddingTop="@dimen/px30">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:gravity="center_vertical"
-                android:padding="@dimen/dp5"
+                android:padding="@dimen/px6"
                 android:text="265才打算"
                 android:textColor="@color/red_dark"
                 android:textSize="12sp"
@@ -38,7 +38,7 @@
             <View
                 android:id="@+id/item_theme_line"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp1"
+                android:layout_height="@dimen/px2"
                 android:background="@color/default_divider"
                 android:visibility="gone"/>
 
@@ -47,9 +47,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:gravity="center_vertical"
-                android:paddingBottom="@dimen/dp5"
-                android:paddingLeft="@dimen/dp20"
-                android:paddingTop="@dimen/dp5"
+                android:paddingBottom="@dimen/px6"
+                android:paddingLeft="@dimen/px60"
+                android:paddingTop="@dimen/px6"
                 android:text="265才打算"
                 android:textColor="@color/default_blue"
                 android:textSize="12sp"
@@ -60,7 +60,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp1"
+            android:layout_height="@dimen/px2"
             android:background="@color/default_divider"
             />
 
@@ -72,8 +72,8 @@
                 android:id="@+id/item_theme_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginRight="@dimen/dp10"
-                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginRight="@dimen/px30"
+                android:layout_marginTop="@dimen/px6"
                 android:visibility="gone"/>
 
             <LinearLayout
@@ -123,7 +123,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginLeft="@dimen/px30"
                     android:gravity="center_vertical"
                     android:text="斤"
                     android:textSize="14sp"

@@ -57,6 +57,6 @@
         android:layout_height="200dp"
         android:layout_above="@id/main_name"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/dp20"
+        android:layout_marginBottom="@dimen/px60"
         />
 </RelativeLayout>

@@ -78,10 +78,10 @@ public class SplashActivity extends BaseActivity {
         outAnimation.setDuration(1000);
         outAnimation.start();
         ObjectAnimator showAnimation = ObjectAnimator.ofFloat(splasher, "alpha", 0f, 1.0f);
-        ObjectAnimator rotationAnimation = ObjectAnimator.ofFloat(splasher, "rotation", 0, 360);
+        final ObjectAnimator rotationAnimation = ObjectAnimator.ofFloat(splasher, "rotation", 0, 360);
         rotationAnimation.setInterpolator(new LinearInterpolator());//not stop
         rotationAnimation.setRepeatCount(-1);//set repeat time forever
-        final AnimatorSet animatorSet = new AnimatorSet();
+        AnimatorSet animatorSet = new AnimatorSet();
 //        animatorSet.play(outAnimation).before(showAnimation).with(rotationAnimation);
         animatorSet.playTogether(showAnimation, rotationAnimation);
         animatorSet.setDuration(3000);
@@ -90,13 +90,15 @@ public class SplashActivity extends BaseActivity {
         splasher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AnimatorSet animatorSet = new AnimatorSet();
                 ObjectAnimator outAnimation = ObjectAnimator.ofFloat(lay, "alpha", 1f, 0f);
-                outAnimation.setDuration(1000);
-                outAnimation.start();
+                animatorSet.playTogether(outAnimation, rotationAnimation);
+                animatorSet.setDuration(500);
+                animatorSet.start();
+
                 outAnimation.addListener(new Animator.AnimatorListener() {
                     @Override
                     public void onAnimationStart(Animator animation) {
-
                     }
 
                     @Override
@@ -106,12 +108,10 @@ public class SplashActivity extends BaseActivity {
 
                     @Override
                     public void onAnimationCancel(Animator animation) {
-
                     }
 
                     @Override
                     public void onAnimationRepeat(Animator animation) {
-
                     }
                 });
             }

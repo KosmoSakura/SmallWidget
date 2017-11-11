@@ -8,13 +8,13 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import java.util.List;
 
+import autolayout.AutoLayoutActivity;
 import greendao.bean.Themes;
 import widget.small.com.smallwidget.R;
 import widget.small.com.smallwidget.db.DaoTheme;
@@ -23,7 +23,7 @@ import widget.small.com.smallwidget.tools.base.Code;
 
 
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AutoLayoutActivity {
 
 /*
     private Intent serviceIntent;
@@ -52,10 +52,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //屏幕常亮
-//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+//        this.getWindow().setFlags(WindowManager.AutoLayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.AutoLayoutParams.FLAG_KEEP_SCREEN_ON);
         //全屏显示
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getWindow().setFlags(WindowManager.AutoLayoutParams.FLAG_FULLSCREEN, WindowManager.AutoLayoutParams.FLAG_FULLSCREEN);
 
 //        //计时器服务
      /*   serviceIntent = new Intent(this, TimeService.class);

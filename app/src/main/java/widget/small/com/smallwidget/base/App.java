@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
+import autolayout.config.AutoLayoutConifg;
 import greendao.dao.DaoMaster;
 import greendao.dao.DaoSession;
 import widget.small.com.smallwidget.net.PersistentCookieStore;
@@ -29,7 +30,8 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        //默认使用的高度是设备的可用高度，也就是不包括状态栏和底部的操作栏的，如果你希望拿设备的物理高度进行百分比化
+        AutoLayoutConifg.getInstance().useDeviceSize();
         instance = this;
         Logger.init("Logger");
         cookiePrefs = getApplicationContext().getSharedPreferences(PersistentCookieStore.COOKIE_PREFS, 0);
