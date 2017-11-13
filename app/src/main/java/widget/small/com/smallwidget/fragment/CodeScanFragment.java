@@ -130,7 +130,7 @@ public class CodeScanFragment extends BaseFragment implements ArcMenu.OnMenuItem
 
     //生成普通二维码
     private void creatCodeScan() {
-        if (text.getText().equals("")) {
+        if ("".equals(text.getText())) {
             Toast.makeText(getActivity(), "不可输入空的内容", Toast.LENGTH_SHORT).show();
         } else {
             final String url = text.getText().toString();
