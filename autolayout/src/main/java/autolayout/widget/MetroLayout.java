@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.Random;
 
 import autolayout.AutoLayoutInfo;
+import autolayout.R;
 import autolayout.utils.AutoLayoutHelper;
 import autolayout.utils.AutoUtils;
-import zhi.soft.com.autolayout.R;
 
 /**
  * Created by zhy on 15/12/10.
