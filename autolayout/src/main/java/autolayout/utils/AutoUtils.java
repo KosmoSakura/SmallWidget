@@ -3,10 +3,10 @@ package autolayout.utils;
 import android.view.View;
 
 import autolayout.AutoLayoutInfo;
+import autolayout.R;
 import autolayout.attr.Attrs;
 import autolayout.attr.AutoAttr;
 import autolayout.config.AutoLayoutConifg;
-import zhi.soft.com.autolayout.R;
 
 
 /**

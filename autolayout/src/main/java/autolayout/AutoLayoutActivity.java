@@ -7,7 +7,10 @@ import android.view.View;
 
 import autolayout.widget.AutoCardView;
 import autolayout.widget.AutoConstraintLayout;
+import autolayout.widget.AutoFrameLayout;
+import autolayout.widget.AutoLinearLayout;
 import autolayout.widget.AutoRadioGroup;
+import autolayout.widget.AutoRelativeLayout;
 import autolayout.widget.AutoTableLayout;
 import autolayout.widget.AutoTableRow;
 import autolayout.widget.MetroLayout;
