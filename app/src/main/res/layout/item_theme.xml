@@ -16,7 +16,7 @@
         android:layout_width="@dimen/px300"
         android:layout_height="@dimen/px90"
         android:layout_centerVertical="true"
-        android:background="@drawable/rect_blue_round_rim"
+        android:background="@drawable/rect_red_round_rim"
         android:padding="@dimen/px9"
         android:src="@color/green"
         />

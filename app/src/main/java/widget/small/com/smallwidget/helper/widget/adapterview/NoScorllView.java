@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.helper.widget;
+package widget.small.com.smallwidget.helper.widget.adapterview;
 
 import android.content.Context;
 import android.util.AttributeSet;

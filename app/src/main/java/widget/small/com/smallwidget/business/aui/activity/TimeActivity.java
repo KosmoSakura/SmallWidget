@@ -28,7 +28,6 @@ public class TimeActivity extends BaseActivity {
     protected void initView() {
         setStatusBarColor(this, Code.System.Immersive);
         elv_Main = findView(R.id.main_elv);
-
     }
 
 

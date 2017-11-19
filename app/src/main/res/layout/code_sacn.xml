@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a7a4a4">
+    android:background="@color/white">
 
     <EditText
         android:id="@+id/code_text"
@@ -28,11 +28,12 @@
         android:layout_margin="15dp"
         app:position="right_bottom"
         app:radius="200dp">
+
         <RelativeLayout
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:padding="10dp"
-            android:background="@drawable/composer_button">
+            android:background="@drawable/composer_button"
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/id_button"
@@ -45,31 +46,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="生成"
-            android:tag="普通二维码"/>
+            android:tag="普通二维码"
+            android:text="生成"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="相机"
-            android:tag="相机选择Logo"/>
+            android:tag="相机选择Logo"
+            android:text="相机"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="相册"
-            android:tag="相册选择Logo"/>
+            android:tag="相册选择Logo"
+            android:text="相册"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="保存"
-            android:tag="保存"/>
+            android:tag="保存"
+            android:text="保存"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="短信"
-            android:tag="让你破费了"/>
+            android:tag="让你破费了"
+            android:text="短信"/>
     </widget.small.com.smallwidget.helper.widget.ArcMenu>
 </RelativeLayout>

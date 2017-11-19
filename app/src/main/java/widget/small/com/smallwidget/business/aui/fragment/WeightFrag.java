@@ -37,11 +37,11 @@ import widget.small.com.smallwidget.helper.tools.TxtUtil;
 import widget.small.com.smallwidget.helper.tools.Ways;
 import widget.small.com.smallwidget.helper.tools.base.Code;
 import widget.small.com.smallwidget.helper.widget.ArcMenu;
-import widget.small.com.smallwidget.helper.widget.NoScrollListView;
+import widget.small.com.smallwidget.helper.widget.adapterview.NoScrollListView;
 import widget.small.com.smallwidget.helper.widget.material.MaterialRefreshLayout;
 import widget.small.com.smallwidget.helper.widget.material.MaterialRefreshListener;
 import widget.small.com.smallwidget.helper.widget.recycler.MultiItemTypeAdapter;
-import widget.small.com.smallwidget.helper.widget.recycler.base.ViewHolder;
+import widget.small.com.smallwidget.helper.widget.recycler.base.HYViewHolder;
 import widget.small.com.smallwidget.helper.widget.time.TimePopupWindow;
 
 /**
@@ -107,7 +107,7 @@ public class WeightFrag extends BaseFragment implements View.OnClickListener, Po
 //        mRecyclerView.addItemDecoration(new DividerItemDecoration(context, DividerItemDecoration.VERTICAL_LIST));
         mAdapter = new CommonAdapter<WeightDto>(context, R.layout.item_weight, mList) {
             @Override
-            protected void convert(ViewHolder holder, WeightDto dto, WeightDto old, int position) {
+            protected void convert(HYViewHolder holder, WeightDto dto, WeightDto old, int position) {
                 Weight weight = dto.getWeight();
 
                 Weight olds = null;

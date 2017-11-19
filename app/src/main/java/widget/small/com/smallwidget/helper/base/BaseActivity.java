@@ -5,17 +5,29 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import java.util.List;
+
 import autolayout.AutoLayoutActivity;
 import greendao.bean.Themes;
+import me.drakeet.multitype.ItemViewBinder;
+import me.drakeet.multitype.MultiTypeAdapter;
 import widget.small.com.smallwidget.R;
 import widget.small.com.smallwidget.helper.db.DaoTheme;
 import widget.small.com.smallwidget.helper.tools.SystemBarTintManager;
 import widget.small.com.smallwidget.helper.tools.base.Code;
+import widget.small.com.smallwidget.helper.widget.adapterview.EmptyRecyclerView;
+import widget.small.com.smallwidget.helper.widget.recyclerview.DividerItemDecoration;
 import widget.small.com.smallwidget.helper.widget.switchlayout.BaseAnimViewS;
 import widget.small.com.smallwidget.helper.widget.switchlayout.BaseEffects;
 import widget.small.com.smallwidget.helper.widget.switchlayout.SwichLayoutInterFace;
@@ -268,6 +280,111 @@ public abstract class BaseActivity extends AutoLayoutActivity implements SwichLa
         tintManager.setNavigationBarTintEnabled(true);
         tintManager.setStatusBarTintResource(colorBar);
     }
+    //-----------------------------------------------------------------------------------------------------
+    protected MultiTypeAdapter adapter;
+    protected EmptyRecyclerView rvListView;
 
+    protected void recInit() {
+        adapter = new MultiTypeAdapter();
+        rvListView.setLayoutManager(new LinearLayoutManager(this));
+        rvListView.setAdapter(adapter);
+    }
+
+    protected void recInit(int span) {
+        adapter = new MultiTypeAdapter();
+        rvListView.setLayoutManager(new GridLayoutManager(this, span));
+        rvListView.setAdapter(adapter);
+    }
+
+    protected void recInit(RecyclerView.LayoutManager layoutManager) {
+        adapter = new MultiTypeAdapter();
+        rvListView.setLayoutManager(layoutManager);
+        rvListView.setAdapter(adapter);
+    }
+
+    protected <T> void recInit(@NonNull Class<? extends T> clazz, @NonNull ItemViewBinder<T, ?> binder) {
+        adapter = new MultiTypeAdapter();
+        rvListView.setLayoutManager(new LinearLayoutManager(this));
+        rvListView.setAdapter(adapter);
+        adapter.register(clazz, binder);
+    }
+
+    protected <T> void recInit(int span, @NonNull Class<? extends T> clazz, @NonNull ItemViewBinder<T, ?> binder) {
+        adapter = new MultiTypeAdapter();
+        rvListView.setLayoutManager(new GridLayoutManager(this, span));
+        rvListView.setAdapter(adapter);
+        adapter.register(clazz, binder);
+    }
+
+    protected <T> void recInit(RecyclerView.LayoutManager layoutManager, @NonNull Class<? extends T> clazz, @NonNull ItemViewBinder<T, ?> binder) {
+        adapter = new MultiTypeAdapter();
+        rvListView.setLayoutManager(layoutManager);
+        rvListView.setAdapter(adapter);
+        adapter.register(clazz, binder);
+    }
+
+    protected void removeDivider(RecyclerView.ItemDecoration decoration) {
+        rvListView.removeItemDecoration(decoration);
+    }
+
+    protected void addVerticalDivider() {
+        rvListView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+    }
+
+    protected void recNotifyData(List datas) {
+        adapter.setItems(datas);
+        adapter.notifyDataSetChanged();
+    }
+
+    protected <T> void recRegistBinder(@NonNull Class<? extends T> clazz, @NonNull ItemViewBinder<T, ?> binder) {
+        if (adapter == null) {
+            return;
+        }
+        adapter.register(clazz, binder);
+    }
+
+    //-----------------------------------------------------------------------------------------------------
+    private boolean moreThanOneScreen;//超过一屏
+
+    protected void recDoubleTaps(View view) {
+        moreThanOneScreen = false;
+        if (view != null) {
+            final long[] mHits = new long[2];
+            view.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    System.arraycopy(mHits, 1, mHits, 0, mHits.length - 1);
+                    mHits[mHits.length - 1] = SystemClock.uptimeMillis();
+                    if (mHits[0] >= (SystemClock.uptimeMillis() - 500)) {
+                        if (rvListView != null && moreThanOneScreen) {
+                            rvListView.smoothScrollToPosition(0);
+                        }
+
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (rvListView != null) {
+            rvListView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                @Override
+                public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                    super.onScrollStateChanged(recyclerView, newState);
+                    LinearLayoutManager manager = (LinearLayoutManager) recyclerView.getLayoutManager();
+                    int firstVisibleItemPosition = manager.findFirstVisibleItemPosition();
+                    // 当不滚动时
+                    if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                        // 判断是否滚动超过一屏
+                        if (firstVisibleItemPosition != 0) {
+                            moreThanOneScreen = true;
+                        } else {
+                            moreThanOneScreen = false;
+                        }
+                    }
+                }
+            });
+        }
+    }
 
 }

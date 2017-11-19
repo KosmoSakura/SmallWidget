@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<autolayout.widget.AutoConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,204 +12,26 @@
     <TextView
         android:id="@+id/setting_title_t"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/px90"
+        android:layout_height="@dimen/px150"
+        android:background="@color/white"
         android:gravity="center"
         android:text="设置"
         android:textColor="@color/default_blue"
         android:textSize="@dimen/px48"
-        app:layout_constraintTop_toTopOf="parent"/>
+        />
 
     <ImageView
         android:id="@+id/setting_title_line"
         android:layout_width="match_parent"
         android:layout_height="@dimen/px1"
         android:background="@color/default_blue"
-        app:layout_constraintTop_toBottomOf="@id/setting_title_t"/>
-    <!--第一个***时光轴-->
-    <android.support.v7.widget.CardView
-        android:id="@+id/setting_time"
-        android:layout_width="0dp"
-        android:layout_height="480px"
-        android:layout_marginLeft="@dimen/px40"
-        android:layout_marginRight="@dimen/px15"
+        />
+
+    <widget.small.com.smallwidget.helper.widget.adapterview.EmptyRecyclerView
+        android:id="@+id/rv_main_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="@dimen/px30"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        android:paddingLeft="@dimen/px36"
-        android:paddingRight="@dimen/px36"
-        app:cardCornerRadius="@dimen/px15"
-        app:cardPreventCornerOverlap="true"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setting_title_line">
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="240px"
-                android:layout_height="240px"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/px75"
-                android:src="@drawable/ic_time_g"/>
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imageView"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="@dimen/px30"
-                android:text="时光轴"
-                android:textColor="@color/default_blue"/>
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
-    <!--第二个-->
-    <android.support.v7.widget.CardView
-        android:id="@+id/setting_theme"
-        android:layout_width="0dp"
-        android:layout_height="480px"
-        android:layout_marginLeft="@dimen/px15"
-        android:layout_marginTop="@dimen/px30"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        android:paddingLeft="@dimen/px36"
-        android:paddingRight="@dimen/px36"
-        app:cardCornerRadius="@dimen/px15"
-        app:cardPreventCornerOverlap="true"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintLeft_toRightOf="@id/setting_time"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setting_title_line">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-
-            <ImageView
-                android:id="@+id/imageView1"
-                android:layout_width="240px"
-                android:layout_height="240px"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/px75"
-                android:src="@drawable/ic_theme_g"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imageView1"
-                android:layout_centerInParent="true"
-                android:text="主题"
-                android:textColor="@color/default_blue"/>
-        </RelativeLayout>
-
-
-    </android.support.v7.widget.CardView>
-
-    <!--第三个-->
-    <android.support.v7.widget.CardView
-        android:id="@+id/setting_card_3"
-        android:layout_width="0dp"
-        android:layout_height="480px"
-        android:layout_marginLeft="@dimen/px40"
-        android:layout_marginRight="@dimen/px15"
-        android:layout_marginTop="@dimen/px30"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        android:paddingLeft="@dimen/px36"
-        android:paddingRight="@dimen/px36"
-        app:cardCornerRadius="@dimen/px15"
-        app:cardPreventCornerOverlap="true"
-        app:layout_constraintDimensionRatio="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setting_time">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-
-
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="240px"
-                android:layout_height="240px"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/px75"
-                android:src="@drawable/ic_data_g"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imageView11"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="@dimen/px30"
-                android:text="重置数据"
-                android:textColor="@color/default_blue"/>
-
-        </RelativeLayout>
-
-
-    </android.support.v7.widget.CardView>
-    <!--第四个-->
-    <android.support.v7.widget.CardView
-        android:id="@+id/setting_card_4"
-        android:layout_width="0dp"
-        android:layout_height="480px"
-        android:layout_marginLeft="@dimen/px15"
-        android:layout_marginTop="@dimen/px30"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?attr/selectableItemBackground"
-        android:paddingLeft="@dimen/px36"
-        android:paddingRight="@dimen/px36"
-        app:cardCornerRadius="@dimen/px15"
-        app:cardPreventCornerOverlap="true"
-        app:layout_constraintDimensionRatio="1"
-        app:layout_constraintLeft_toRightOf="@id/setting_card_3"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setting_time">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintRight_toRightOf="parent"
-            >
-
-
-            <ImageView
-                android:id="@+id/imageView112"
-                android:layout_width="240px"
-                android:layout_height="240px"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/px75"
-                android:src="@drawable/ic_face_g"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imageView112"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="@dimen/px30"
-                android:text="人脸识别"
-                android:textColor="@color/default_blue"/>
-
-        </RelativeLayout>
-
-
-    </android.support.v7.widget.CardView>
-
-
-</autolayout.widget.AutoConstraintLayout>
+        android:background="@color/white"
+        />
+</LinearLayout>

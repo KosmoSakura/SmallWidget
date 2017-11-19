@@ -7,10 +7,10 @@ import java.util.List;
 
 import widget.small.com.smallwidget.helper.widget.recycler.MultiItemTypeAdapter;
 import widget.small.com.smallwidget.helper.widget.recycler.base.ItemViewDelegate;
-import widget.small.com.smallwidget.helper.widget.recycler.base.ViewHolder;
+import widget.small.com.smallwidget.helper.widget.recycler.base.HYViewHolder;
 
 /**
- * Created by zhy on 16/4/9.
+ * Created by zhy on 16/4/9
  */
 public abstract class CommonAdapter<T> extends MultiItemTypeAdapter<T> {
     protected Context mContext;
@@ -37,13 +37,13 @@ public abstract class CommonAdapter<T> extends MultiItemTypeAdapter<T> {
             }
 
             @Override
-            public void convert(ViewHolder holder, T t, T old, int position) {
+            public void convert(HYViewHolder holder, T t, T old, int position) {
                 CommonAdapter.this.convert(holder, t, old, position);
             }
         });
     }
 
-    protected abstract void convert(ViewHolder holder, T t, T old, int position);
+    protected abstract void convert(HYViewHolder holder, T t, T old, int position);
 
 
 }

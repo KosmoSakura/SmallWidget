@@ -9,12 +9,12 @@ import java.util.List;
 
 import widget.small.com.smallwidget.helper.widget.recycler.base.ItemViewDelegate;
 import widget.small.com.smallwidget.helper.widget.recycler.base.ItemViewDelegateManager;
-import widget.small.com.smallwidget.helper.widget.recycler.base.ViewHolder;
+import widget.small.com.smallwidget.helper.widget.recycler.base.HYViewHolder;
 
 /**
  * Created by zhy on 16/4/9.
  */
-public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
+public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<HYViewHolder> {
     protected Context mContext;
     protected List<T> mDatas;
 
@@ -41,20 +41,20 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public HYViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ItemViewDelegate itemViewDelegate = mItemViewDelegateManager.getItemViewDelegate(viewType);
         int layoutId = itemViewDelegate.getItemViewLayoutId();
-        ViewHolder holder = ViewHolder.createViewHolder(mContext, parent, layoutId);
+        HYViewHolder holder = HYViewHolder.createViewHolder(mContext, parent, layoutId);
         onViewHolderCreated(holder, holder.getConvertView());
         setListener(parent, holder, viewType);
         return holder;
     }
 
-    public void onViewHolderCreated(ViewHolder holder, View itemView) {
+    public void onViewHolderCreated(HYViewHolder holder, View itemView) {
 
     }
 
-    public void convert(ViewHolder holder, T t, T old) {
+    public void convert(HYViewHolder holder, T t, T old) {
         mItemViewDelegateManager.convert(holder, t, old,holder.getAdapterPosition());
     }
 
@@ -63,7 +63,7 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
     }
 
 
-    protected void setListener(final ViewGroup parent, final ViewHolder viewHolder, int viewType) {
+    protected void setListener(final ViewGroup parent, final HYViewHolder viewHolder, int viewType) {
         if (!isEnabled(viewType)) return;
         viewHolder.getConvertView().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +88,7 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(HYViewHolder holder, int position) {
         if (position < 1) {
             convert(holder, mDatas.get(position), null);
         } else {

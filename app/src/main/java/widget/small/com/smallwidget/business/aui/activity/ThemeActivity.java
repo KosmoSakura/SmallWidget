@@ -17,10 +17,10 @@ import widget.small.com.smallwidget.helper.db.DaoTheme;
 import widget.small.com.smallwidget.helper.tools.ToastUtil;
 import widget.small.com.smallwidget.helper.tools.TxtUtil;
 import widget.small.com.smallwidget.helper.tools.base.Code;
-import widget.small.com.smallwidget.helper.widget.NoScrollListView;
+import widget.small.com.smallwidget.helper.widget.adapterview.NoScrollListView;
 
 /**
- * Description:
+ * Description: 主题
  * <p>
  * Author: Kosmos
  * Email:ZeroProject@foxmail.com

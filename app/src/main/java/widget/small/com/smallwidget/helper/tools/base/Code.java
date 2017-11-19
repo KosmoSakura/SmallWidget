@@ -36,6 +36,11 @@ public interface Code {
         int BASE = 0xFF000001;
         int kg = BASE + 1;
         int jing = BASE - 1;
+
+        int Setting_To_Theme = BASE + 1;
+        int Setting_to_ResetData = BASE + 2;
+        int Main_To_Face = BASE + 3;
+        int Main_To_Timer = BASE + 4;
     }
 
     interface Broadcast {
