@@ -77,10 +77,9 @@ public class TimePopupWindow extends PopupWindow implements OnClickListener {
         // ----时间转轮
         final View timepickerview = rootView.findViewById(R.id.timepicker);
 
-        ScreenInfo screenInfo = new ScreenInfo((Activity) context);
         wheelTime = new WheelTime(timepickerview, type);
 
-        wheelTime.screenheight = screenInfo.getHeight();
+        wheelTime.screenheight = DensityUtil.getScreenHeigh((Activity) context);
 
 //        //默认选中当前时间
 //        Calendar calendar = Calendar.getInstance();
