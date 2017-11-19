@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.adapter.times;
+package widget.small.com.smallwidget.business.aui.adapter.times;
 
 /**
  * 介绍：完全伸展开的ListView的适配器

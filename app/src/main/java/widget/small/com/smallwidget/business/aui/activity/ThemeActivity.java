@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.activity;
+package widget.small.com.smallwidget.business.aui.activity;
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -10,7 +10,7 @@ import java.util.List;
 
 import greendao.bean.Themes;
 import widget.small.com.smallwidget.R;
-import widget.small.com.smallwidget.business.adapter.ThemeAdapter;
+import widget.small.com.smallwidget.business.aui.adapter.ThemeAdapter;
 import widget.small.com.smallwidget.helper.base.BaseActivity;
 import widget.small.com.smallwidget.business.bean.ThemeBean;
 import widget.small.com.smallwidget.helper.db.DaoTheme;

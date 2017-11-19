@@ -40,7 +40,7 @@
         </meta-data>
 
         <activity
-            android:name=".business.activity.SplashActivity"
+            android:name=".business.aui.activity.SplashActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
@@ -51,7 +51,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".business.activity.MainActivity"/>
+        <activity android:name=".business.aui.activity.MainActivity"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.FileProvider"
@@ -90,10 +90,10 @@
         <!-- <service android:name=".service.WidgetService"/> -->
         <service android:name=".business.service.TimeService"/>
 
-        <activity android:name=".business.activity.ZhiFuActivity"/>
-        <activity android:name=".business.activity.TimeActivity"/>
-        <activity android:name=".business.activity.ThemeActivity"/>
-        <activity android:name=".business.activity.FaceActivity"/>
+        <activity android:name=".business.aui.activity.ZhiFuActivity"/>
+        <activity android:name=".business.aui.activity.TimeActivity"/>
+        <activity android:name=".business.aui.activity.ThemeActivity"/>
+        <activity android:name=".business.aui.activity.FaceActivity"/>
         <activity android:name=".helper.widget.face.camera.CameraActivity"/>
         <activity android:name=".helper.tools.photos.PhotoPickerActivity"/>
     </application>

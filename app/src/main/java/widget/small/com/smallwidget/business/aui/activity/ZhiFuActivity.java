@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.activity;
+package widget.small.com.smallwidget.business.aui.activity;
 
 import android.annotation.TargetApi;
 import android.content.Intent;

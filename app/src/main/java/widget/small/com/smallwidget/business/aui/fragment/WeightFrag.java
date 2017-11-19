@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.fragment;
+package widget.small.com.smallwidget.business.aui.fragment;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -25,8 +25,8 @@ import java.util.List;
 
 import greendao.bean.Weight;
 import widget.small.com.smallwidget.R;
-import widget.small.com.smallwidget.business.adapter.GroupAdapter;
-import widget.small.com.smallwidget.business.adapter.recycle.CommonAdapter;
+import widget.small.com.smallwidget.business.aui.adapter.GroupAdapter;
+import widget.small.com.smallwidget.business.aui.adapter.recycle.CommonAdapter;
 import widget.small.com.smallwidget.helper.base.BaseFragment;
 import widget.small.com.smallwidget.business.bean.WeightDto;
 import widget.small.com.smallwidget.helper.db.DaoWeight;

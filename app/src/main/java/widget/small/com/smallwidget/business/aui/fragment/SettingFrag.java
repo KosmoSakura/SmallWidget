@@ -1,13 +1,13 @@
-package widget.small.com.smallwidget.business.fragment;
+package widget.small.com.smallwidget.business.aui.fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 
 import widget.small.com.smallwidget.R;
-import widget.small.com.smallwidget.business.activity.FaceActivity;
-import widget.small.com.smallwidget.business.activity.ThemeActivity;
-import widget.small.com.smallwidget.business.activity.TimeActivity;
+import widget.small.com.smallwidget.business.aui.activity.FaceActivity;
+import widget.small.com.smallwidget.business.aui.activity.ThemeActivity;
+import widget.small.com.smallwidget.business.aui.activity.TimeActivity;
 import widget.small.com.smallwidget.helper.base.BaseFragment;
 import widget.small.com.smallwidget.helper.db.DaoTheme;
 import widget.small.com.smallwidget.helper.tools.CodeUtils;

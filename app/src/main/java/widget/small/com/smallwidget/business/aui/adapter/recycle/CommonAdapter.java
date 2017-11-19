@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.adapter.recycle;
+package widget.small.com.smallwidget.business.aui.adapter.recycle;
 
 import android.content.Context;
 import android.view.LayoutInflater;

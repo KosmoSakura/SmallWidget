@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.activity;
+package widget.small.com.smallwidget.business.aui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,13 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import widget.small.com.smallwidget.R;
-import widget.small.com.smallwidget.business.adapter.MenuTabAdapter;
+import widget.small.com.smallwidget.business.aui.adapter.MenuTabAdapter;
 import widget.small.com.smallwidget.helper.base.BaseActivity;
-import widget.small.com.smallwidget.business.fragment.BackGroundFrag;
-import widget.small.com.smallwidget.business.fragment.CodeScanFragment;
-import widget.small.com.smallwidget.business.fragment.SettingFrag;
-import widget.small.com.smallwidget.business.fragment.WeightFrag;
-import widget.small.com.smallwidget.business.fragment.ZhiFuFrag;
+import widget.small.com.smallwidget.business.aui.fragment.BackGroundFrag;
+import widget.small.com.smallwidget.business.aui.fragment.CodeScanFragment;
+import widget.small.com.smallwidget.business.aui.fragment.SettingFrag;
+import widget.small.com.smallwidget.business.aui.fragment.WeightFrag;
+import widget.small.com.smallwidget.business.aui.fragment.ZhiFuFrag;
 import widget.small.com.smallwidget.helper.tools.ToastUtil;
 import widget.small.com.smallwidget.helper.tools.base.Code;
 import widget.small.com.smallwidget.helper.tools.glide.GlideUtils;

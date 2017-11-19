@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.fragment;
+package widget.small.com.smallwidget.business.aui.fragment;
 
 import android.content.Intent;
 import android.view.KeyEvent;
@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import widget.small.com.smallwidget.R;
-import widget.small.com.smallwidget.business.activity.ZhiFuActivity;
+import widget.small.com.smallwidget.business.aui.activity.ZhiFuActivity;
 import widget.small.com.smallwidget.helper.base.BaseFragment;
 import widget.small.com.smallwidget.helper.tools.ToastUtil;
 import widget.small.com.smallwidget.helper.tools.TxtUtil;

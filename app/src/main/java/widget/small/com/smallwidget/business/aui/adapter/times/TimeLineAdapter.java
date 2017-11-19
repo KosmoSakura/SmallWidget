@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.adapter.times;
+package widget.small.com.smallwidget.business.aui.adapter.times;
 
 import android.content.Context;
 import android.view.LayoutInflater;

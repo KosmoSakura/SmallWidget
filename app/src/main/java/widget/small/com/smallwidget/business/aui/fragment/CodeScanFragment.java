@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.fragment;
+package widget.small.com.smallwidget.business.aui.fragment;
 
 import android.content.DialogInterface;
 import android.content.Intent;

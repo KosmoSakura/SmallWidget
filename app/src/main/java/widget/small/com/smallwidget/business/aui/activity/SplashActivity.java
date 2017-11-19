@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.activity;
+package widget.small.com.smallwidget.business.aui.activity;
 
 import android.Manifest;
 import android.animation.Animator;

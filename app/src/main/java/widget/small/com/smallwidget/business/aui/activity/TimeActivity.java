@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.activity;
+package widget.small.com.smallwidget.business.aui.activity;
 
 import android.widget.ExpandableListView;
 
@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import widget.small.com.smallwidget.R;
-import widget.small.com.smallwidget.business.adapter.times.TimeLine;
-import widget.small.com.smallwidget.business.adapter.times.TimeLineAdapter;
+import widget.small.com.smallwidget.business.aui.adapter.times.TimeLine;
+import widget.small.com.smallwidget.business.aui.adapter.times.TimeLineAdapter;
 import widget.small.com.smallwidget.helper.base.BaseActivity;
 import widget.small.com.smallwidget.business.bean.Event;
 import widget.small.com.smallwidget.business.bean.Month;

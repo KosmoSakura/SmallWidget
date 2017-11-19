@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.adapter;
+package widget.small.com.smallwidget.business.aui.adapter;
 
 import android.content.Context;
 import android.widget.LinearLayout;

@@ -1,4 +1,4 @@
-package widget.small.com.smallwidget.business.adapter.times;
+package widget.small.com.smallwidget.business.aui.adapter.times;
 
 import java.io.Serializable;
 import java.util.List;
