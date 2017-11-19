@@ -55,7 +55,7 @@
         </RelativeLayout>
 
 
-        <widget.small.com.smallwidget.widget.NoScrollListView
+        <widget.small.com.smallwidget.helper.widget.NoScrollListView
             android:id="@+id/theme_lv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -63,7 +63,7 @@
             android:divider="@color/default_divider"
             android:dividerHeight="10dp">
 
-        </widget.small.com.smallwidget.widget.NoScrollListView>
+        </widget.small.com.smallwidget.helper.widget.NoScrollListView>
     </LinearLayout>
 
 </ScrollView>

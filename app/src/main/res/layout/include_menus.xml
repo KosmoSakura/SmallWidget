@@ -102,38 +102,6 @@
             android:layout_alignParentBottom="true"
             android:background="@color/default_blue"/>
     </RelativeLayout>
-    <!--设置-->
-    <RelativeLayout
-        android:id="@+id/nav_manage"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/px120"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:id="@+id/nav_manage_i"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="设\t\t置"
-            android:textColor="@color/white"/>
-
-        <ImageView
-            android:layout_width="@dimen/px75"
-            android:layout_height="@dimen/px75"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/px60"
-            android:layout_toLeftOf="@id/nav_manage_i"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_menu_theme"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_alignParentBottom="true"
-            android:background="@color/default_blue"/>
-    </RelativeLayout>
 
     <!--分享-->
     <RelativeLayout
@@ -190,6 +158,38 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/px60"
             android:layout_toLeftOf="@id/nav_send_i"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_menu_theme"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/default_blue"/>
+    </RelativeLayout>
+    <!--设置-->
+    <RelativeLayout
+        android:id="@+id/nav_manage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px120"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/nav_manage_i"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="设\t\t置"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:layout_width="@dimen/px75"
+            android:layout_height="@dimen/px75"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/px60"
+            android:layout_toLeftOf="@id/nav_manage_i"
             android:scaleType="fitXY"
             android:src="@drawable/ic_menu_theme"/>
 

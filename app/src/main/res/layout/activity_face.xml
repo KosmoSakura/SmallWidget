@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="widget.small.com.smallwidget.activity.FaceActivity"
+    tools:context=".business.activity.FaceActivity"
     tools:ignore="PxUsage">
 
-    <widget.small.com.smallwidget.widget.FaceOverlayView
+    <widget.small.com.smallwidget.helper.widget.FaceOverlayView
         android:id="@+id/face_overlay"
         android:layout_width="match_parent"
         android:layout_height="0dp"

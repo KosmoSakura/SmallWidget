@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="widget.small.com.smallwidget.activity.SplashActivity">
+    tools:context=".business.activity.SplashActivity">
 
     <RelativeLayout
         android:id="@+id/splash_image_lay"

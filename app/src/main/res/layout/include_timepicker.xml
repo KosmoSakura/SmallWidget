@@ -16,7 +16,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <widget.small.com.smallwidget.widget.time.WheelView
+        <widget.small.com.smallwidget.helper.widget.time.WheelView
             android:id="@+id/year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <widget.small.com.smallwidget.widget.time.WheelView
+        <widget.small.com.smallwidget.helper.widget.time.WheelView
             android:id="@+id/month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <widget.small.com.smallwidget.widget.time.WheelView
+        <widget.small.com.smallwidget.helper.widget.time.WheelView
             android:id="@+id/day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <widget.small.com.smallwidget.widget.time.WheelView
+        <widget.small.com.smallwidget.helper.widget.time.WheelView
             android:id="@+id/hour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <widget.small.com.smallwidget.widget.time.WheelView
+        <widget.small.com.smallwidget.helper.widget.time.WheelView
             android:id="@+id/min"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
