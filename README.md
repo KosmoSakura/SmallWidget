@@ -1,3 +1,10 @@
+# 记住要带的东西：
+```
+1.机械鼠标，
+2.鼠标垫子
+```
+
+
 # 其实我也不知道应该取个什么名字好
 这里有好些有趣的破玩意
 ![](https://gitee.com/KosmosZero/SmallWidget/blob/master/app/src/main/res/drawable-nodpi/zero_hands.gif)
