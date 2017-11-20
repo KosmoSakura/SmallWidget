@@ -22,7 +22,7 @@ import autolayout.AutoLayoutActivity;
 import greendao.bean.Themes;
 import me.drakeet.multitype.ItemViewBinder;
 import me.drakeet.multitype.MultiTypeAdapter;
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.db.DaoTheme;
 import space.zero.kosmos.mos.tools.SystemBarTintManager;
 import space.zero.kosmos.mos.tools.base.Code;

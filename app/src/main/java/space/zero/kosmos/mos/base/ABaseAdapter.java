@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import autolayout.utils.AutoUtils;
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 
 /**
  * Created by ZeroProject on 2016/8/29 0029 16:24

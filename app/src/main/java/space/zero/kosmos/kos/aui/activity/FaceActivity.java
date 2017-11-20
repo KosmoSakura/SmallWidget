@@ -10,7 +10,7 @@ import com.google.android.gms.vision.face.FaceDetector;
 
 import java.io.InputStream;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.base.BaseActivity;
 import space.zero.kosmos.mos.tools.glide.GlideUtils;
 import space.zero.kosmos.mos.tools.photos.ImageCollectorHelper;

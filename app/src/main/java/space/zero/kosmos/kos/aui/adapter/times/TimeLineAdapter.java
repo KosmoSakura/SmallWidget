@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.kos.bean.Event;
 import space.zero.kosmos.kos.bean.Month;
 import space.zero.kosmos.mos.tools.glide.GlideUtils;

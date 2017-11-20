@@ -17,9 +17,9 @@ import android.widget.RelativeLayout;
 
 import java.io.File;
 
-import space.zero.kosmos.mos.tools.CodeUtils;
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.base.BaseActivity;
+import space.zero.kosmos.mos.tools.CodeUtils;
 import space.zero.kosmos.mos.tools.IOUtils;
 import space.zero.kosmos.mos.tools.base.Code;
 import space.zero.kosmos.mos.tools.glide.GlideUtils;

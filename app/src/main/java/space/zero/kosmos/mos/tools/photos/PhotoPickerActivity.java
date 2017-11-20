@@ -28,7 +28,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.tools.ToastUtil;
 import space.zero.kosmos.mos.tools.base.Code;
 

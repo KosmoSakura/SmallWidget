@@ -24,7 +24,7 @@ import java.util.Date;
 import java.util.List;
 
 import greendao.bean.Weight;
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.kos.aui.adapter.GroupAdapter;
 import space.zero.kosmos.kos.aui.adapter.recycle.CommonAdapter;
 import space.zero.kosmos.mos.base.BaseFragment;

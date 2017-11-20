@@ -8,12 +8,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import greendao.bean.Themes;
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.kos.bean.ThemeBean;
 import space.zero.kosmos.mos.base.ABaseAdapter;
 import space.zero.kosmos.mos.base.IViewHolder;
-import space.zero.kosmos.kos.bean.ThemeBean;
-import space.zero.kosmos.mos.tools.base.Code;
 import space.zero.kosmos.mos.db.DaoTheme;
+import space.zero.kosmos.mos.tools.base.Code;
+import space.zero.kosmos.R;
 
 
 /**

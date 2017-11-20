@@ -15,14 +15,14 @@ import android.widget.RelativeLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.kos.aui.adapter.MenuTabAdapter;
-import space.zero.kosmos.mos.base.BaseActivity;
 import space.zero.kosmos.kos.aui.fragment.BackGroundFrag;
 import space.zero.kosmos.kos.aui.fragment.CodeScanFragment;
 import space.zero.kosmos.kos.aui.fragment.SettingFrag;
 import space.zero.kosmos.kos.aui.fragment.WeightFrag;
 import space.zero.kosmos.kos.aui.fragment.ZhiFuFrag;
+import space.zero.kosmos.mos.base.BaseActivity;
 import space.zero.kosmos.mos.tools.ToastUtil;
 import space.zero.kosmos.mos.tools.base.Code;
 import space.zero.kosmos.mos.tools.glide.GlideUtils;

@@ -5,9 +5,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import greendao.bean.Weight;
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.base.ABaseAdapter;
 import space.zero.kosmos.mos.base.IViewHolder;
+
 
 
 /**

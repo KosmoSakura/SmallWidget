@@ -36,7 +36,7 @@ import java.util.Calendar;
 import java.util.Hashtable;
 import java.util.List;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.base.App;
 import space.zero.kosmos.mos.base.BaseFragment;
 import space.zero.kosmos.kos.bean.CollBean;

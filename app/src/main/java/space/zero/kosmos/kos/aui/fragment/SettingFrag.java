@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.kos.aui.activity.ThemeActivity;
 import space.zero.kosmos.kos.aui.adapter.binder.FunctionItemBinder;
 import space.zero.kosmos.kos.bean.MainItemBean;

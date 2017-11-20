@@ -5,12 +5,12 @@ import android.widget.ExpandableListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.kos.aui.adapter.times.TimeLine;
 import space.zero.kosmos.kos.aui.adapter.times.TimeLineAdapter;
-import space.zero.kosmos.mos.base.BaseActivity;
 import space.zero.kosmos.kos.bean.Event;
 import space.zero.kosmos.kos.bean.Month;
+import space.zero.kosmos.mos.base.BaseActivity;
 import space.zero.kosmos.mos.tools.base.Code;
 
 /**

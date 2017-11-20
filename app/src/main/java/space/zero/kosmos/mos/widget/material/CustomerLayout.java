@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 
 /**
  * Created by cjj on 2016/2/22.

@@ -15,7 +15,7 @@ import com.bumptech.glide.request.target.Target;
 
 import java.io.File;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.base.App;
 import space.zero.kosmos.mos.tools.TxtUtil;
 import space.zero.kosmos.mos.tools.glide.transformations.TransformBlur;

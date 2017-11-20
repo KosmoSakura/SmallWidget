@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.tools.base.Code;
 import space.zero.kosmos.mos.tools.ToastUtil;
 import space.zero.kosmos.mos.tools.logger.Logger;

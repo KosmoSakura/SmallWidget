@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.base.BaseActivity;
 import space.zero.kosmos.mos.tools.DialogUtilsZhi;
 

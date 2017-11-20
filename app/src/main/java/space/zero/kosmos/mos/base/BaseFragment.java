@@ -22,7 +22,7 @@ import java.util.List;
 
 import me.drakeet.multitype.ItemViewBinder;
 import me.drakeet.multitype.MultiTypeAdapter;
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.tools.SystemBarTintManager;
 import space.zero.kosmos.mos.tools.base.Code;
 import space.zero.kosmos.mos.widget.adapterview.EmptyRecyclerView;

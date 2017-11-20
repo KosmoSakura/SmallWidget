@@ -2,7 +2,7 @@ package space.zero.kosmos.kos.aui.fragment;
 
 import android.view.View;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.mos.base.BaseFragment;
 
 /**

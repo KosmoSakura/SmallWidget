@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.kos.aui.activity.ZhiFuActivity;
 import space.zero.kosmos.mos.base.BaseFragment;
 import space.zero.kosmos.mos.tools.ToastUtil;

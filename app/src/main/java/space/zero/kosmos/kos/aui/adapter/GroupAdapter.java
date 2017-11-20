@@ -3,10 +3,10 @@ package space.zero.kosmos.kos.aui.adapter;
 import android.content.Context;
 import android.widget.TextView;
 
-import widget.small.com.smallwidget.R;
 import space.zero.kosmos.mos.base.ABaseAdapter;
 import space.zero.kosmos.mos.base.IViewHolder;
 import space.zero.kosmos.mos.tools.TxtUtil;
+import space.zero.kosmos.R;
 
 
 /**

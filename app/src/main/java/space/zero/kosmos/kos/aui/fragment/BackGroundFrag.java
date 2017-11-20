@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.kos.aui.activity.FaceActivity;
 import space.zero.kosmos.kos.aui.activity.TimeActivity;
 import space.zero.kosmos.kos.aui.adapter.binder.FunctionItemBinder;

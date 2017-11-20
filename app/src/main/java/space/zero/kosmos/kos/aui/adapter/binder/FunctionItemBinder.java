@@ -9,11 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import me.drakeet.multitype.ItemViewBinder;
-import widget.small.com.smallwidget.R;
+import space.zero.kosmos.R;
 import space.zero.kosmos.kos.bean.MainItemBean;
 import space.zero.kosmos.mos.base.BaseViewHolder;
 import space.zero.kosmos.mos.tools.TxtUtil;
 import space.zero.kosmos.mos.tools.glide.GlideUtils;
+
 
 
 /**
