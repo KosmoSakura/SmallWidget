@@ -110,7 +110,7 @@
             android:background="@color/default_blue"/>
     </RelativeLayout>
 
-    <widget.small.com.smallwidget.helper.widget.material.MaterialRefreshLayout
+    <space.zero.kosmos.mos.widget.material.MaterialRefreshLayout
         android:id="@+id/weight_ref"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -135,7 +135,7 @@
             >
 
         </android.support.v7.widget.RecyclerView>
-    </widget.small.com.smallwidget.helper.widget.material.MaterialRefreshLayout>
+    </space.zero.kosmos.mos.widget.material.MaterialRefreshLayout>
 
     <RelativeLayout
         android:id="@+id/group_main_mem_root"
@@ -145,7 +145,7 @@
         android:padding="16dp"
         >
 
-        <widget.small.com.smallwidget.helper.widget.ArcMenu
+        <space.zero.kosmos.mos.widget.ArcMenu
             android:id="@+id/weight_arc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -181,6 +181,6 @@
                 android:src="@drawable/list_icon"/>
 
 
-        </widget.small.com.smallwidget.helper.widget.ArcMenu>
+        </space.zero.kosmos.mos.widget.ArcMenu>
     </RelativeLayout>
 </RelativeLayout>

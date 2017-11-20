@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="widget.small.com.smallwidget"
+<manifest package="space.zero.kosmos"
           xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools">
 
@@ -16,7 +16,7 @@
     <uses-feature android:name="android.hardware.camera" />
 
     <application
-        android:name=".helper.base.App"
+        android:name="space.zero.kosmos.mos.base.App"
         android:allowBackup="true"
         android:icon="@drawable/rinn_kakashi_s"
         android:label="@string/app_name"
@@ -24,7 +24,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="donut">
         <meta-data
-            android:name="widget.small.com.smallwidget.helper.tools.glide.GlidePicModule"
+            android:name="space.zero.kosmos.mos.tools.glide.GlidePicModule"
             android:value="GlideModule"/>
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
@@ -40,7 +40,7 @@
         </meta-data>
 
         <activity
-            android:name=".business.aui.activity.SplashActivity"
+            android:name="space.zero.kosmos.kos.aui.activity.SplashActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
@@ -51,7 +51,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".business.aui.activity.MainActivity"/>
+        <activity android:name="space.zero.kosmos.kos.aui.activity.MainActivity"/>
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.FileProvider"
@@ -76,7 +76,7 @@
         </intent-filter>
     </receiver>
         -->
-        <receiver android:name=".business.service.WidgetProvider">
+        <receiver android:name="space.zero.kosmos.kos.service.WidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
                 <action android:name="com.kosmos.widget.UPDATE_ALL"/>
@@ -88,14 +88,14 @@
         </receiver>
 
         <!-- <service android:name=".service.WidgetService"/> -->
-        <service android:name=".business.service.TimeService"/>
+        <service android:name="space.zero.kosmos.kos.service.TimeService"/>
 
-        <activity android:name=".business.aui.activity.ZhiFuActivity"/>
-        <activity android:name=".business.aui.activity.TimeActivity"/>
-        <activity android:name=".business.aui.activity.ThemeActivity"/>
-        <activity android:name=".business.aui.activity.FaceActivity"/>
-        <activity android:name=".helper.widget.face.camera.CameraActivity"/>
-        <activity android:name=".helper.tools.photos.PhotoPickerActivity"/>
+        <activity android:name="space.zero.kosmos.kos.aui.activity.ZhiFuActivity"/>
+        <activity android:name="space.zero.kosmos.kos.aui.activity.TimeActivity"/>
+        <activity android:name="space.zero.kosmos.kos.aui.activity.ThemeActivity"/>
+        <activity android:name="space.zero.kosmos.kos.aui.activity.FaceActivity"/>
+        <activity android:name="space.zero.kosmos.mos.widget.face.camera.CameraActivity"/>
+        <activity android:name="space.zero.kosmos.mos.tools.photos.PhotoPickerActivity"/>
     </application>
 
 </manifest>

@@ -8,12 +8,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <widget.small.com.smallwidget.helper.widget.face.camera.preview.CameraSurfaceView
+        <space.zero.kosmos.mos.widget.face.camera.preview.CameraSurfaceView
             android:id="@+id/camera_surfaceview"
             android:layout_width="0dip"
             android:layout_height="0dip"/>
 
-        <widget.small.com.smallwidget.helper.widget.face.FaceView
+        <space.zero.kosmos.mos.widget.face.FaceView
             android:id="@+id/face_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

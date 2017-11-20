@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "widget.small.com.smallwidget"
+        applicationId "space.zero.kosmos"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1

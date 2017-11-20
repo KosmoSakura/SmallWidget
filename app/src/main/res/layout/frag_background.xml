@@ -15,7 +15,7 @@
         android:scaleType="fitXY"
         />
 
-    <widget.small.com.smallwidget.helper.widget.adapterview.EmptyRecyclerView
+    <space.zero.kosmos.mos.widget.adapterview.EmptyRecyclerView
         android:id="@+id/rv_main_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

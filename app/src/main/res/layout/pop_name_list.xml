@@ -7,7 +7,7 @@
               android:orientation="vertical"
               android:padding="@dimen/px15">
 
-    <widget.small.com.smallwidget.helper.widget.adapterview.NoScrollListView
+    <space.zero.kosmos.mos.widget.adapterview.NoScrollListView
         android:id="@+id/pop_name_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +16,7 @@
         android:divider="@color/default_divider"
         android:dividerHeight="1dp">
 
-    </widget.small.com.smallwidget.helper.widget.adapterview.NoScrollListView>
+    </space.zero.kosmos.mos.widget.adapterview.NoScrollListView>
 
     <View
         android:layout_width="match_parent"

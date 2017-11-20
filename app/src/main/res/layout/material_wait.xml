@@ -5,7 +5,7 @@
               android:background="#dde1e6"
               android:gravity="center">
 
-    <widget.small.com.smallwidget.helper.widget.material.CustomerFaceView
+    <space.zero.kosmos.mos.widget.material.CustomerFaceView
         android:id="@+id/customer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

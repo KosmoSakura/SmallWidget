@@ -21,7 +21,7 @@
         android:layout_centerInParent="true"
         />
 
-    <widget.small.com.smallwidget.helper.widget.ArcMenu
+    <space.zero.kosmos.mos.widget.ArcMenu
         android:id="@+id/id_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -72,5 +72,5 @@
             android:layout_height="wrap_content"
             android:tag="让你破费了"
             android:text="短信"/>
-    </widget.small.com.smallwidget.helper.widget.ArcMenu>
+    </space.zero.kosmos.mos.widget.ArcMenu>
 </RelativeLayout>
