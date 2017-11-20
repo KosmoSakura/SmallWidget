@@ -9,6 +9,7 @@ import autolayout.widget.AutoCardView;
 import autolayout.widget.AutoConstraintLayout;
 import autolayout.widget.AutoFrameLayout;
 import autolayout.widget.AutoLinearLayout;
+import autolayout.widget.AutoLinearLayoutCompat;
 import autolayout.widget.AutoRadioGroup;
 import autolayout.widget.AutoRelativeLayout;
 import autolayout.widget.AutoTableLayout;
@@ -23,12 +24,13 @@ public class AutoLayoutActivity extends AppCompatActivity {
     private static final String LAYOUT_LINEARLAYOUT = "LinearLayout";
     private static final String LAYOUT_FRAMELAYOUT = "FrameLayout";
     private static final String LAYOUT_RELATIVELAYOUT = "RelativeLayout";
-    private static final String LAYOUT_AutoCardView = "CardView";
     private static final String LAYOUT_AutoRadioGroup = "RadioGroup";
     private static final String LAYOUT_AutoTableLayout = "TableLayout";
     private static final String LAYOUT_AutoTableRow = "TableRow";
     private static final String LAYOUT_MetroLayout = "MetroLayout";
-    private static final String LayoutConstraintLayout = "ConstraintLayout";
+    private static final String AutoLinearLayoutCompat = "android.support.v7.widget.LinearLayoutCompat";
+    private static final String LAYOUT_AutoCardView = "android.support.v7.widget.CardView";
+    private static final String LayoutConstraintLayout = "android.support.constraint.ConstraintLayout";
 
 
     @Override
@@ -53,6 +55,9 @@ public class AutoLayoutActivity extends AppCompatActivity {
         }
         if (name.equals(LayoutConstraintLayout)) {
             view = new AutoConstraintLayout(context, attrs);
+        }
+        if (name.equals(AutoLinearLayoutCompat)) {
+            view = new AutoLinearLayoutCompat(context, attrs);
         }
         if (name.equals(LAYOUT_AutoRadioGroup)) {
             view = new AutoRadioGroup(context, attrs);
