@@ -14,9 +14,9 @@ android {
     signingConfigs {
         release {
             storeFile file('../tool/kosmos.jks')
-            storePassword '160325'
-            keyAlias 'kosmos'
-            keyPassword '160325'
+            storePassword '-----'
+            keyAlias '-----'
+            keyPassword '-----'
         }
     }
     buildTypes {
